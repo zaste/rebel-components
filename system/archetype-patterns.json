@@ -1,0 +1,542 @@
+{
+  "archetypes": {
+    "disclosure": {
+      "description": "Show/Hide behaviors - Controls visibility and revelation of content",
+      "verb": "reveal",
+      "core_behavior": "toggle_visibility",
+      "state_pattern": "open/closed",
+      "common_events": ["show", "hide", "toggle"],
+      
+      "patterns": {
+        "modal": {
+          "description": "Overlay dialog that appears above main content",
+          "capability_level": "interactive",
+          "typical_size": "6.8kb",
+          "satisfaction_rate": 0.92,
+          "features": {
+            "backdrop": { "essential": true, "description": "Dark overlay behind modal" },
+            "focus_trap": { "essential": true, "description": "Keeps focus within modal" },
+            "escape_close": { "essential": true, "description": "Close on escape key" },
+            "body_scroll_lock": { "recommended": true, "description": "Prevent background scroll" }
+          },
+          "aria_requirements": ["role=dialog", "aria-labelledby", "aria-describedby"],
+          "keyboard_support": ["Escape", "Tab", "Shift+Tab"],
+          "use_cases": ["contact forms", "confirmations", "image galleries", "login forms"]
+        },
+        
+        "accordion": {
+          "description": "Collapsible content panels",
+          "capability_level": "interactive",
+          "typical_size": "3.2kb",
+          "satisfaction_rate": 0.88,
+          "features": {
+            "smooth_animation": { "essential": true, "description": "Animated open/close" },
+            "multiple_open": { "optional": true, "description": "Allow multiple panels open" },
+            "keyboard_navigation": { "essential": true, "description": "Arrow key navigation" }
+          },
+          "aria_requirements": ["role=button", "aria-expanded", "aria-controls"],
+          "keyboard_support": ["Enter", "Space", "ArrowDown", "ArrowUp"],
+          "use_cases": ["FAQs", "menu sections", "content organization", "settings panels"]
+        },
+        
+        "dropdown": {
+          "description": "Menu that appears on trigger activation",
+          "capability_level": "interactive",
+          "typical_size": "4.5kb",
+          "satisfaction_rate": 0.87,
+          "features": {
+            "auto_positioning": { "essential": true, "description": "Smart position calculation" },
+            "click_outside_close": { "essential": true, "description": "Close when clicking outside" },
+            "keyboard_navigation": { "essential": true, "description": "Arrow key navigation" }
+          },
+          "aria_requirements": ["role=menu", "aria-haspopup", "aria-expanded"],
+          "keyboard_support": ["Enter", "Space", "ArrowDown", "ArrowUp", "Escape"],
+          "use_cases": ["navigation menus", "action menus", "select alternatives", "context menus"]
+        },
+        
+        "tooltip": {
+          "description": "Small informational popup on hover/focus",
+          "capability_level": "interactive",
+          "typical_size": "2.1kb",
+          "satisfaction_rate": 0.91,
+          "features": {
+            "smart_positioning": { "essential": true, "description": "Avoid viewport edges" },
+            "hover_delay": { "recommended": true, "description": "Delay before showing" },
+            "focus_support": { "essential": true, "description": "Show on keyboard focus" }
+          },
+          "aria_requirements": ["role=tooltip", "aria-describedby"],
+          "keyboard_support": ["Escape"],
+          "use_cases": ["help text", "additional info", "form field hints", "icon explanations"]
+        },
+        
+        "popover": {
+          "description": "Contextual information bubble",
+          "capability_level": "interactive",
+          "typical_size": "3.8kb",
+          "satisfaction_rate": 0.89,
+          "features": {
+            "rich_content": { "essential": true, "description": "Support for complex content" },
+            "arrow_pointer": { "recommended": true, "description": "Visual pointer to trigger" },
+            "manual_trigger": { "essential": true, "description": "Click to show/hide" }
+          },
+          "aria_requirements": ["role=dialog", "aria-labelledby"],
+          "keyboard_support": ["Escape", "Tab"],
+          "use_cases": ["detailed info", "mini forms", "rich tooltips", "contextual actions"]
+        }
+      },
+      
+      "design_principles": [
+        "Clear visual hierarchy between trigger and content",
+        "Obvious entry and exit affordances",
+        "Respect user attention and focus",
+        "Provide clear state indicators",
+        "Support both mouse and keyboard interaction"
+      ]
+    },
+    
+    "navigation": {
+      "description": "Switch Views - Controls movement between different content areas",
+      "verb": "navigate",
+      "core_behavior": "change_active_view",
+      "state_pattern": "active/inactive",
+      "common_events": ["activate", "deactivate", "navigate"],
+      
+      "patterns": {
+        "tabs": {
+          "description": "Horizontal or vertical tab interface",
+          "capability_level": "interactive",
+          "typical_size": "4.1kb",
+          "satisfaction_rate": 0.90,
+          "features": {
+            "roving_tabindex": { "essential": true, "description": "Keyboard navigation pattern" },
+            "orientation_support": { "recommended": true, "description": "Horizontal/vertical layouts" },
+            "lazy_loading": { "optional": true, "description": "Load panels on demand" }
+          },
+          "aria_requirements": ["role=tablist", "role=tab", "role=tabpanel", "aria-selected"],
+          "keyboard_support": ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"],
+          "use_cases": ["content sections", "settings panels", "data views", "multi-step forms"]
+        },
+        
+        "sidebar": {
+          "description": "Collapsible side navigation",
+          "capability_level": "interactive",
+          "typical_size": "5.3kb",
+          "satisfaction_rate": 0.86,
+          "features": {
+            "responsive_collapse": { "essential": true, "description": "Mobile-friendly collapse" },
+            "overlay_mode": { "recommended": true, "description": "Mobile overlay behavior" },
+            "persistent_state": { "optional": true, "description": "Remember collapsed state" }
+          },
+          "aria_requirements": ["role=navigation", "aria-label", "aria-expanded"],
+          "keyboard_support": ["Tab", "Enter", "Space"],
+          "use_cases": ["admin panels", "app navigation", "content hierarchy", "filter panels"]
+        },
+        
+        "stepper": {
+          "description": "Multi-step process navigation",
+          "capability_level": "stateful",
+          "typical_size": "6.7kb",
+          "satisfaction_rate": 0.88,
+          "features": {
+            "progress_indication": { "essential": true, "description": "Visual progress tracking" },
+            "step_validation": { "essential": true, "description": "Validate before proceeding" },
+            "non_linear_navigation": { "optional": true, "description": "Jump to any valid step" }
+          },
+          "aria_requirements": ["role=progressbar", "aria-valuenow", "aria-valuemax"],
+          "keyboard_support": ["Tab", "Enter", "ArrowLeft", "ArrowRight"],
+          "use_cases": ["wizards", "checkouts", "onboarding", "multi-part forms"]
+        },
+        
+        "pagination": {
+          "description": "Navigate through pages of content",
+          "capability_level": "interactive",
+          "typical_size": "3.4kb",
+          "satisfaction_rate": 0.87,
+          "features": {
+            "page_size_control": { "optional": true, "description": "Items per page selector" },
+            "jump_to_page": { "optional": true, "description": "Direct page input" },
+            "infinite_scroll": { "alternative": true, "description": "Alternative pattern" }
+          },
+          "aria_requirements": ["role=navigation", "aria-label", "aria-current"],
+          "keyboard_support": ["Tab", "Enter", "Space"],
+          "use_cases": ["search results", "data tables", "image galleries", "blog posts"]
+        },
+        
+        "breadcrumb": {
+          "description": "Hierarchical navigation trail",
+          "capability_level": "static",
+          "typical_size": "1.9kb",
+          "satisfaction_rate": 0.84,
+          "features": {
+            "structured_data": { "recommended": true, "description": "Schema.org markup" },
+            "truncation": { "optional": true, "description": "Handle long paths" },
+            "dynamic_updates": { "optional": true, "description": "Update on navigation" }
+          },
+          "aria_requirements": ["role=navigation", "aria-label"],
+          "keyboard_support": ["Tab", "Enter"],
+          "use_cases": ["site navigation", "file browsers", "category paths", "process flows"]
+        }
+      },
+      
+      "design_principles": [
+        "Clear indication of current location",
+        "Obvious navigation affordances",
+        "Consistent interaction patterns",
+        "Logical information architecture",
+        "Efficient keyboard navigation"
+      ]
+    },
+    
+    "collection": {
+      "description": "Display Data - Presents and organizes collections of information",
+      "verb": "display",
+      "core_behavior": "organize_information",
+      "state_pattern": "filtered/sorted/grouped",
+      "common_events": ["filter", "sort", "select", "paginate"],
+      
+      "patterns": {
+        "filter": {
+          "description": "Advanced filtering interface - GOLD STANDARD",
+          "capability_level": "stateful",
+          "typical_size": "8.3kb",
+          "satisfaction_rate": 0.94,
+          "features": {
+            "debounced_search": { "essential": true, "description": "Performant text search" },
+            "tag_filters": { "essential": true, "description": "Multi-select category filters" },
+            "state_persistence": { "recommended": true, "description": "Remember filter state" },
+            "clear_all": { "essential": true, "description": "Reset all filters" }
+          },
+          "aria_requirements": ["role=search", "aria-live", "aria-atomic"],
+          "keyboard_support": ["Tab", "Enter", "Space", "ArrowDown", "ArrowUp"],
+          "use_cases": ["product catalogs", "search interfaces", "data exploration", "content discovery"]
+        },
+        
+        "table": {
+          "description": "Structured data presentation",
+          "capability_level": "stateful",
+          "typical_size": "9.2kb",
+          "satisfaction_rate": 0.86,
+          "features": {
+            "sortable_columns": { "essential": true, "description": "Click to sort data" },
+            "responsive_design": { "essential": true, "description": "Mobile-friendly layout" },
+            "row_selection": { "optional": true, "description": "Select multiple rows" },
+            "inline_editing": { "advanced": true, "description": "Edit cells directly" }
+          },
+          "aria_requirements": ["role=table", "role=columnheader", "aria-sort"],
+          "keyboard_support": ["Tab", "Enter", "Space", "ArrowKeys"],
+          "use_cases": ["data grids", "comparison tables", "admin interfaces", "reports"]
+        },
+        
+        "gallery": {
+          "description": "Visual content showcase",
+          "capability_level": "interactive",
+          "typical_size": "7.1kb",
+          "satisfaction_rate": 0.89,
+          "features": {
+            "lightbox_mode": { "essential": true, "description": "Full-screen viewing" },
+            "thumbnail_navigation": { "essential": true, "description": "Grid view navigation" },
+            "lazy_loading": { "recommended": true, "description": "Performance optimization" },
+            "keyboard_navigation": { "essential": true, "description": "Arrow key navigation" }
+          },
+          "aria_requirements": ["role=img", "aria-label", "aria-describedby"],
+          "keyboard_support": ["ArrowLeft", "ArrowRight", "Enter", "Escape"],
+          "use_cases": ["photo galleries", "product images", "portfolios", "media browsers"]
+        },
+        
+        "kanban": {
+          "description": "Card-based workflow visualization",
+          "capability_level": "connected",
+          "typical_size": "12.1kb",
+          "satisfaction_rate": 0.91,
+          "features": {
+            "drag_and_drop": { "essential": true, "description": "Move cards between columns" },
+            "card_editing": { "essential": true, "description": "Edit card content" },
+            "column_management": { "optional": true, "description": "Add/remove columns" },
+            "progress_tracking": { "recommended": true, "description": "Visual progress indicators" }
+          },
+          "aria_requirements": ["role=application", "aria-grabbed", "aria-dropeffect"],
+          "keyboard_support": ["Tab", "Enter", "Space", "ArrowKeys", "Delete"],
+          "use_cases": ["project management", "task boards", "workflow tracking", "content organization"]
+        },
+        
+        "list": {
+          "description": "Simple item enumeration",
+          "capability_level": "static",
+          "typical_size": "2.8kb",
+          "satisfaction_rate": 0.85,
+          "features": {
+            "virtual_scrolling": { "advanced": true, "description": "Handle large lists" },
+            "item_actions": { "optional": true, "description": "Contextual actions" },
+            "grouping": { "optional": true, "description": "Categorize items" }
+          },
+          "aria_requirements": ["role=list", "role=listitem"],
+          "keyboard_support": ["Tab", "ArrowUp", "ArrowDown"],
+          "use_cases": ["navigation menus", "contact lists", "simple catalogs", "content indices"]
+        }
+      },
+      
+      "design_principles": [
+        "Scannable information hierarchy",
+        "Consistent item formatting",
+        "Efficient filtering and sorting",
+        "Clear visual grouping",
+        "Performance with large datasets"
+      ]
+    },
+    
+    "input": {
+      "description": "User Entry - Collects and validates user information",
+      "verb": "collect",
+      "core_behavior": "capture_data",
+      "state_pattern": "valid/invalid/pending",
+      "common_events": ["input", "validate", "submit", "change"],
+      
+      "patterns": {
+        "form": {
+          "description": "Complete data collection interface",
+          "capability_level": "stateful",
+          "typical_size": "7.9kb",
+          "satisfaction_rate": 0.85,
+          "features": {
+            "real_time_validation": { "essential": true, "description": "Validate as user types" },
+            "error_display": { "essential": true, "description": "Clear error messaging" },
+            "progress_indication": { "recommended": true, "description": "Show completion progress" },
+            "auto_save": { "optional": true, "description": "Save draft automatically" }
+          },
+          "aria_requirements": ["role=form", "aria-invalid", "aria-describedby"],
+          "keyboard_support": ["Tab", "Enter", "Escape"],
+          "use_cases": ["contact forms", "registration", "surveys", "data entry"]
+        },
+        
+        "select": {
+          "description": "Choose from predefined options",
+          "capability_level": "interactive",
+          "typical_size": "3.7kb",
+          "satisfaction_rate": 0.86,
+          "features": {
+            "searchable": { "recommended": true, "description": "Filter options by typing" },
+            "multi_select": { "optional": true, "description": "Select multiple options" },
+            "custom_options": { "advanced": true, "description": "Add new options" }
+          },
+          "aria_requirements": ["role=combobox", "aria-expanded", "aria-activedescendant"],
+          "keyboard_support": ["ArrowUp", "ArrowDown", "Enter", "Escape", "Type to search"],
+          "use_cases": ["dropdown selectors", "multi-choice fields", "tag selectors", "option pickers"]
+        },
+        
+        "datepicker": {
+          "description": "Date and time selection interface",
+          "capability_level": "stateful",
+          "typical_size": "8.9kb",
+          "satisfaction_rate": 0.82,
+          "features": {
+            "calendar_view": { "essential": true, "description": "Visual calendar interface" },
+            "keyboard_input": { "essential": true, "description": "Type dates directly" },
+            "date_validation": { "essential": true, "description": "Ensure valid dates" },
+            "range_selection": { "optional": true, "description": "Select date ranges" }
+          },
+          "aria_requirements": ["role=application", "aria-label", "aria-selected"],
+          "keyboard_support": ["ArrowKeys", "Enter", "Escape", "PageUp", "PageDown"],
+          "use_cases": ["booking forms", "event scheduling", "filtering by date", "birth date entry"]
+        },
+        
+        "toggle": {
+          "description": "Binary choice interface",
+          "capability_level": "interactive",
+          "typical_size": "2.5kb",
+          "satisfaction_rate": 0.91,
+          "features": {
+            "visual_feedback": { "essential": true, "description": "Clear on/off states" },
+            "smooth_animation": { "recommended": true, "description": "Satisfying transitions" },
+            "label_association": { "essential": true, "description": "Clear labeling" }
+          },
+          "aria_requirements": ["role=switch", "aria-checked", "aria-labelledby"],
+          "keyboard_support": ["Space", "Enter"],
+          "use_cases": ["settings panels", "feature toggles", "preferences", "binary choices"]
+        },
+        
+        "slider": {
+          "description": "Continuous value selection",
+          "capability_level": "interactive",
+          "typical_size": "4.3kb",
+          "satisfaction_rate": 0.88,
+          "features": {
+            "value_display": { "essential": true, "description": "Show current value" },
+            "step_control": { "recommended": true, "description": "Define value increments" },
+            "range_slider": { "optional": true, "description": "Select value ranges" }
+          },
+          "aria_requirements": ["role=slider", "aria-valuemin", "aria-valuemax", "aria-valuenow"],
+          "keyboard_support": ["ArrowLeft", "ArrowRight", "Home", "End", "PageUp", "PageDown"],
+          "use_cases": ["price ranges", "volume controls", "filters", "configuration"]
+        }
+      },
+      
+      "design_principles": [
+        "Clear field labeling and purpose",
+        "Immediate validation feedback",
+        "Forgiving error recovery",
+        "Logical tab order and grouping",
+        "Accessible to all input methods"
+      ]
+    },
+    
+    "feedback": {
+      "description": "Status Communication - Informs users about system state and actions",
+      "verb": "communicate",
+      "core_behavior": "convey_status",
+      "state_pattern": "visible/hidden/persistent",
+      "common_events": ["show", "dismiss", "timeout", "update"],
+      
+      "patterns": {
+        "toast": {
+          "description": "Temporary notification messages",
+          "capability_level": "interactive",
+          "typical_size": "3.9kb",
+          "satisfaction_rate": 0.91,
+          "features": {
+            "auto_dismiss": { "essential": true, "description": "Disappear automatically" },
+            "manual_dismiss": { "essential": true, "description": "User can close" },
+            "position_control": { "recommended": true, "description": "Configurable position" },
+            "stacking": { "optional": true, "description": "Multiple toasts" }
+          },
+          "aria_requirements": ["role=alert", "aria-live", "aria-atomic"],
+          "keyboard_support": ["Escape", "Tab"],
+          "use_cases": ["success messages", "error notifications", "info updates", "confirmations"]
+        },
+        
+        "alert": {
+          "description": "Important status messages",
+          "capability_level": "static",
+          "typical_size": "2.4kb",
+          "satisfaction_rate": 0.87,
+          "features": {
+            "severity_levels": { "essential": true, "description": "Error, warning, info, success" },
+            "icon_support": { "recommended": true, "description": "Visual status indicators" },
+            "dismissible": { "optional": true, "description": "User can close" }
+          },
+          "aria_requirements": ["role=alert", "aria-labelledby"],
+          "keyboard_support": ["Tab", "Enter"],
+          "use_cases": ["form errors", "system status", "warnings", "important announcements"]
+        },
+        
+        "progress": {
+          "description": "Task completion indicators",
+          "capability_level": "interactive",
+          "typical_size": "3.1kb",
+          "satisfaction_rate": 0.86,
+          "features": {
+            "percentage_display": { "essential": true, "description": "Show completion percentage" },
+            "indeterminate_mode": { "essential": true, "description": "Unknown duration tasks" },
+            "cancellation": { "optional": true, "description": "Allow task cancellation" }
+          },
+          "aria_requirements": ["role=progressbar", "aria-valuenow", "aria-valuemax"],
+          "keyboard_support": ["Escape (if cancellable)"],
+          "use_cases": ["file uploads", "form submission", "data loading", "installation progress"]
+        },
+        
+        "skeleton": {
+          "description": "Loading state placeholder",
+          "capability_level": "static",
+          "typical_size": "1.7kb",
+          "satisfaction_rate": 0.88,
+          "features": {
+            "content_shape": { "essential": true, "description": "Match final content layout" },
+            "animation": { "recommended": true, "description": "Subtle loading animation" },
+            "progressive_reveal": { "optional": true, "description": "Load sections incrementally" }
+          },
+          "aria_requirements": ["aria-busy", "aria-label"],
+          "keyboard_support": [],
+          "use_cases": ["content loading", "image placeholders", "list loading", "card loading"]
+        },
+        
+        "dialog": {
+          "description": "Confirmation and choice dialogs",
+          "capability_level": "interactive",
+          "typical_size": "4.2kb",
+          "satisfaction_rate": 0.89,
+          "features": {
+            "action_buttons": { "essential": true, "description": "Clear action choices" },
+            "escape_cancel": { "essential": true, "description": "Escape cancels action" },
+            "focus_management": { "essential": true, "description": "Focus on primary action" }
+          },
+          "aria_requirements": ["role=alertdialog", "aria-labelledby", "aria-describedby"],
+          "keyboard_support": ["Enter", "Escape", "Tab"],
+          "use_cases": ["confirmations", "destructive actions", "important choices", "error dialogs"]
+        }
+      },
+      
+      "design_principles": [
+        "Clear and timely communication",
+        "Non-intrusive but noticeable",
+        "Appropriate urgency indication",
+        "Actionable when relevant",
+        "Accessible to all users"
+      ]
+    }
+  },
+  
+  "archetype_relationships": {
+    "common_combinations": [
+      {
+        "pattern": "disclosure + input",
+        "example": "modal + form",
+        "usage_frequency": 0.56,
+        "satisfaction": 0.89,
+        "description": "Modal windows containing forms for data collection"
+      },
+      {
+        "pattern": "collection + navigation",
+        "example": "table + pagination",
+        "usage_frequency": 0.42,
+        "satisfaction": 0.87,
+        "description": "Data tables with pagination controls"
+      },
+      {
+        "pattern": "collection + collection",
+        "example": "filter + results",
+        "usage_frequency": 0.34,
+        "satisfaction": 0.91,
+        "description": "Filtering interface with results display"
+      },
+      {
+        "pattern": "navigation + collection",
+        "example": "tabs + content",
+        "usage_frequency": 0.38,
+        "satisfaction": 0.88,
+        "description": "Tabbed interface organizing content sections"
+      }
+    ],
+    
+    "anti_patterns": [
+      {
+        "pattern": "disclosure + disclosure",
+        "example": "modal inside modal",
+        "reason": "Creates confusing focus management and escape paths",
+        "alternative": "Use stepper pattern or single modal with multiple steps"
+      },
+      {
+        "pattern": "multiple feedback",
+        "example": "toast + alert + progress",
+        "reason": "Overwhelming and competing for attention",
+        "alternative": "Prioritize single most important status message"
+      }
+    ]
+  },
+  
+  "evolution_metrics": {
+    "success_indicators": [
+      "User task completion rate",
+      "Time to completion",
+      "Error rate reduction",
+      "Accessibility compliance score",
+      "User satisfaction ratings"
+    ],
+    
+    "optimization_targets": [
+      "Reduce cognitive load",
+      "Improve discoverability",
+      "Enhance accessibility",
+      "Increase performance",
+      "Simplify maintenance"
+    ]
+  }
+}
