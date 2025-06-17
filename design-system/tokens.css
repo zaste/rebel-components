@@ -1,0 +1,406 @@
+/*!
+ * Rebel Design System Tokens v10.2
+ * Complete design token system for consistent, accessible components
+ * Based on 8px grid system with semantic naming
+ */
+
+:root {
+  /* 📐 SPACING SYSTEM - Base: 8px grid */
+  --rebel-spacing-0: 0;
+  --rebel-spacing-1: 0.5rem;   /* 8px */
+  --rebel-spacing-2: 1rem;     /* 16px */
+  --rebel-spacing-3: 1.5rem;   /* 24px */
+  --rebel-spacing-4: 2rem;     /* 32px */
+  --rebel-spacing-5: 2.5rem;   /* 40px */
+  --rebel-spacing-6: 3rem;     /* 48px */
+  --rebel-spacing-8: 4rem;     /* 64px */
+  --rebel-spacing-10: 5rem;    /* 80px */
+  --rebel-spacing-12: 6rem;    /* 96px */
+  --rebel-spacing-16: 8rem;    /* 128px */
+  --rebel-spacing-20: 10rem;   /* 160px */
+  
+  /* 🎨 COLOR PALETTE */
+  
+  /* Surface Colors */
+  --rebel-surface: #ffffff;
+  --rebel-surface-alt: #f8f9fa;
+  --rebel-surface-secondary: #f1f3f4;
+  --rebel-surface-tertiary: #e8eaed;
+  --rebel-surface-inverse: #1a1a1a;
+  --rebel-surface-overlay: rgba(255, 255, 255, 0.95);
+  
+  /* Brand Colors */
+  --rebel-primary: #007bff;
+  --rebel-primary-50: #e3f2fd;
+  --rebel-primary-100: #bbdefb;
+  --rebel-primary-200: #90caf9;
+  --rebel-primary-300: #64b5f6;
+  --rebel-primary-400: #42a5f5;
+  --rebel-primary-500: #2196f3;
+  --rebel-primary-600: #1e88e5;
+  --rebel-primary-700: #1976d2;
+  --rebel-primary-800: #1565c0;
+  --rebel-primary-900: #0d47a1;
+  --rebel-primary-hover: #0056b3;
+  --rebel-primary-active: #004085;
+  --rebel-primary-light: #b3d7ff;
+  --rebel-primary-dark: #003d82;
+  
+  /* Semantic Colors */
+  --rebel-success: #28a745;
+  --rebel-success-50: #e8f5e8;
+  --rebel-success-100: #c3e6c3;
+  --rebel-success-200: #9cd89c;
+  --rebel-success-300: #74c974;
+  --rebel-success-400: #56bc56;
+  --rebel-success-500: #4caf50;
+  --rebel-success-600: #43a047;
+  --rebel-success-700: #388e3c;
+  --rebel-success-800: #2e7d32;
+  --rebel-success-900: #1b5e20;
+  --rebel-success-light: #d4edda;
+  --rebel-success-dark: #155724;
+  
+  --rebel-warning: #ffc107;
+  --rebel-warning-50: #fffde7;
+  --rebel-warning-100: #fff9c4;
+  --rebel-warning-200: #fff59d;
+  --rebel-warning-300: #fff176;
+  --rebel-warning-400: #ffee58;
+  --rebel-warning-500: #ffeb3b;
+  --rebel-warning-600: #fdd835;
+  --rebel-warning-700: #fbc02d;
+  --rebel-warning-800: #f9a825;
+  --rebel-warning-900: #f57f17;
+  --rebel-warning-light: #fff3cd;
+  --rebel-warning-dark: #856404;
+  
+  --rebel-error: #dc3545;
+  --rebel-error-50: #ffebee;
+  --rebel-error-100: #ffcdd2;
+  --rebel-error-200: #ef9a9a;
+  --rebel-error-300: #e57373;
+  --rebel-error-400: #ef5350;
+  --rebel-error-500: #f44336;
+  --rebel-error-600: #e53935;
+  --rebel-error-700: #d32f2f;
+  --rebel-error-800: #c62828;
+  --rebel-error-900: #b71c1c;
+  --rebel-error-light: #f8d7da;
+  --rebel-error-dark: #721c24;
+  
+  --rebel-info: #17a2b8;
+  --rebel-info-50: #e0f2f1;
+  --rebel-info-100: #b2dfdb;
+  --rebel-info-200: #80cbc4;
+  --rebel-info-300: #4db6ac;
+  --rebel-info-400: #26a69a;
+  --rebel-info-500: #009688;
+  --rebel-info-600: #00897b;
+  --rebel-info-700: #00796b;
+  --rebel-info-800: #00695c;
+  --rebel-info-900: #004d40;
+  --rebel-info-light: #d1ecf1;
+  --rebel-info-dark: #0c5460;
+  
+  /* Text Colors */
+  --rebel-text: #212529;
+  --rebel-text-secondary: #6c757d;
+  --rebel-text-tertiary: #adb5bd;
+  --rebel-text-light: #dee2e6;
+  --rebel-text-inverse: #ffffff;
+  --rebel-text-muted: #868e96;
+  --rebel-text-disabled: #ced4da;
+  
+  /* Border Colors */
+  --rebel-border: #dee2e6;
+  --rebel-border-light: #f1f3f4;
+  --rebel-border-medium: #ced4da;
+  --rebel-border-dark: #adb5bd;
+  --rebel-border-inverse: #495057;
+  
+  /* Interactive States */
+  --rebel-focus: #0066cc;
+  --rebel-focus-ring: rgba(0, 102, 204, 0.25);
+  --rebel-selection: rgba(0, 123, 255, 0.25);
+  --rebel-hover: rgba(0, 123, 255, 0.1);
+  --rebel-active: rgba(0, 123, 255, 0.2);
+  --rebel-disabled: #e9ecef;
+  --rebel-disabled-text: #adb5bd;
+  
+  /* Overlay Colors */
+  --rebel-overlay: rgba(0, 0, 0, 0.5);
+  --rebel-overlay-light: rgba(0, 0, 0, 0.25);
+  --rebel-overlay-heavy: rgba(0, 0, 0, 0.75);
+  --rebel-overlay-white: rgba(255, 255, 255, 0.9);
+  
+  /* 🎬 MOTION & TIMING */
+  --rebel-duration-instant: 0ms;
+  --rebel-duration-fast: 150ms;
+  --rebel-duration-normal: 300ms;
+  --rebel-duration-slow: 500ms;
+  --rebel-duration-slower: 700ms;
+  --rebel-duration-slowest: 1000ms;
+  
+  /* Easing Functions */
+  --rebel-easing: cubic-bezier(0.4, 0, 0.2, 1);           /* Standard */
+  --rebel-easing-in: cubic-bezier(0.4, 0, 1, 1);          /* Decelerate */
+  --rebel-easing-out: cubic-bezier(0, 0, 0.2, 1);         /* Accelerate */
+  --rebel-easing-in-out: cubic-bezier(0.4, 0, 0.2, 1);    /* Standard */
+  --rebel-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --rebel-easing-elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* 📏 BORDER RADIUS */
+  --rebel-radius-none: 0;
+  --rebel-radius-xs: 0.125rem;  /* 2px */
+  --rebel-radius-sm: 0.25rem;   /* 4px */
+  --rebel-radius-md: 0.5rem;    /* 8px */
+  --rebel-radius-lg: 0.75rem;   /* 12px */
+  --rebel-radius-xl: 1rem;      /* 16px */
+  --rebel-radius-2xl: 1.5rem;   /* 24px */
+  --rebel-radius-3xl: 2rem;     /* 32px */
+  --rebel-radius-full: 9999px;
+  
+  /* 🎭 SHADOWS */
+  --rebel-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --rebel-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.05);
+  --rebel-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --rebel-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --rebel-shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  --rebel-shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+  --rebel-shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+  --rebel-shadow-focus: 0 0 0 3px var(--rebel-focus-ring);
+  
+  /* ✨ SPECIAL EFFECTS */
+  --rebel-blur-sm: 4px;
+  --rebel-blur-md: 8px;
+  --rebel-blur-lg: 16px;
+  --rebel-blur-xl: 24px;
+  
+  --rebel-backdrop-blur: 8px;
+  --rebel-backdrop-saturate: 180%;
+  
+  /* 📊 Z-INDEX SCALE */
+  --rebel-z-base: 0;
+  --rebel-z-dropdown: 100;
+  --rebel-z-sticky: 200;
+  --rebel-z-fixed: 300;
+  --rebel-z-modal-backdrop: 400;
+  --rebel-z-modal: 500;
+  --rebel-z-popover: 600;
+  --rebel-z-tooltip: 700;
+  --rebel-z-notification: 800;
+  --rebel-z-max: 999;
+  
+  /* 📝 TYPOGRAPHY */
+  --rebel-font-family-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --rebel-font-family-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --rebel-font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  
+  /* Font Sizes - Fluid Scale */
+  --rebel-text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);     /* 12-14px */
+  --rebel-text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);       /* 14-16px */
+  --rebel-text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);       /* 16-18px */
+  --rebel-text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);      /* 18-20px */
+  --rebel-text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);       /* 20-24px */
+  --rebel-text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);            /* 24-32px */
+  --rebel-text-3xl: clamp(1.875rem, 1.6rem + 1.375vw, 2.5rem);    /* 30-40px */
+  --rebel-text-4xl: clamp(2.25rem, 1.9rem + 1.75vw, 3rem);        /* 36-48px */
+  --rebel-text-5xl: clamp(3rem, 2.5rem + 2.5vw, 4rem);            /* 48-64px */
+  
+  /* Font Weights */
+  --rebel-font-thin: 100;
+  --rebel-font-light: 300;
+  --rebel-font-normal: 400;
+  --rebel-font-medium: 500;
+  --rebel-font-semibold: 600;
+  --rebel-font-bold: 700;
+  --rebel-font-extrabold: 800;
+  --rebel-font-black: 900;
+  
+  /* Line Heights */
+  --rebel-leading-none: 1;
+  --rebel-leading-tight: 1.25;
+  --rebel-leading-snug: 1.375;
+  --rebel-leading-normal: 1.5;
+  --rebel-leading-relaxed: 1.625;
+  --rebel-leading-loose: 2;
+  
+  /* Letter Spacing */
+  --rebel-tracking-tighter: -0.05em;
+  --rebel-tracking-tight: -0.025em;
+  --rebel-tracking-normal: 0em;
+  --rebel-tracking-wide: 0.025em;
+  --rebel-tracking-wider: 0.05em;
+  --rebel-tracking-widest: 0.1em;
+  
+  /* 📱 BREAKPOINTS */
+  --rebel-breakpoint-sm: 640px;
+  --rebel-breakpoint-md: 768px;
+  --rebel-breakpoint-lg: 1024px;
+  --rebel-breakpoint-xl: 1280px;
+  --rebel-breakpoint-2xl: 1536px;
+  
+  /* 🎯 COMPONENT SPECIFIC */
+  --rebel-input-height: 2.5rem;        /* 40px */
+  --rebel-input-height-sm: 2rem;       /* 32px */
+  --rebel-input-height-lg: 3rem;       /* 48px */
+  --rebel-button-height: 2.5rem;       /* 40px */
+  --rebel-touch-target: 2.75rem;       /* 44px minimum */
+  
+  /* Form Elements */
+  --rebel-input-border: var(--rebel-border);
+  --rebel-input-border-focus: var(--rebel-primary);
+  --rebel-input-border-error: var(--rebel-error);
+  --rebel-input-bg: var(--rebel-surface);
+  --rebel-input-placeholder: var(--rebel-text-tertiary);
+  
+  /* Navigation */
+  --rebel-nav-height: 4rem;            /* 64px */
+  --rebel-nav-height-mobile: 3.5rem;   /* 56px */
+  --rebel-sidebar-width: 16rem;        /* 256px */
+  --rebel-sidebar-width-collapsed: 4rem; /* 64px */
+}
+
+/* 🌗 DARK MODE TOKENS */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Surface adjustments for dark mode */
+    --rebel-surface: #121212;
+    --rebel-surface-alt: #1e1e1e;
+    --rebel-surface-secondary: #2d2d2d;
+    --rebel-surface-tertiary: #3d3d3d;
+    --rebel-surface-inverse: #ffffff;
+    --rebel-surface-overlay: rgba(18, 18, 18, 0.95);
+    
+    /* Text adjustments */
+    --rebel-text: #ffffff;
+    --rebel-text-secondary: #b3b3b3;
+    --rebel-text-tertiary: #737373;
+    --rebel-text-light: #525252;
+    --rebel-text-inverse: #000000;
+    --rebel-text-muted: #a3a3a3;
+    --rebel-text-disabled: #525252;
+    
+    /* Border adjustments */
+    --rebel-border: #404040;
+    --rebel-border-light: #2d2d2d;
+    --rebel-border-medium: #525252;
+    --rebel-border-dark: #737373;
+    --rebel-border-inverse: #d4d4d8;
+    
+    /* Interactive state adjustments */
+    --rebel-hover: rgba(255, 255, 255, 0.05);
+    --rebel-active: rgba(255, 255, 255, 0.1);
+    --rebel-disabled: #262626;
+    --rebel-disabled-text: #525252;
+    
+    /* Overlay adjustments */
+    --rebel-overlay: rgba(0, 0, 0, 0.8);
+    --rebel-overlay-light: rgba(0, 0, 0, 0.5);
+    --rebel-overlay-heavy: rgba(0, 0, 0, 0.9);
+    --rebel-overlay-white: rgba(18, 18, 18, 0.9);
+    
+    /* Form element adjustments */
+    --rebel-input-bg: #1e1e1e;
+    --rebel-input-border: #404040;
+    --rebel-input-placeholder: #737373;
+  }
+}
+
+/* 🖨️ PRINT MODE TOKENS */
+@media print {
+  :root {
+    --rebel-surface: white;
+    --rebel-text: black;
+    --rebel-border: black;
+    --rebel-shadow-xs: none;
+    --rebel-shadow-sm: none;
+    --rebel-shadow-md: none;
+    --rebel-shadow-lg: none;
+    --rebel-shadow-xl: none;
+    --rebel-shadow-2xl: none;
+  }
+}
+
+/* ♿ HIGH CONTRAST MODE */
+@media (prefers-contrast: high) {
+  :root {
+    --rebel-border: currentColor;
+    --rebel-shadow-focus: 0 0 0 2px currentColor;
+    --rebel-focus: currentColor;
+  }
+}
+
+/* 🎬 REDUCED MOTION PREFERENCES */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --rebel-duration-instant: 0ms;
+    --rebel-duration-fast: 0ms;
+    --rebel-duration-normal: 0ms;
+    --rebel-duration-slow: 0ms;
+    --rebel-duration-slower: 0ms;
+    --rebel-duration-slowest: 0ms;
+  }
+}
+
+/* 🔧 UTILITY CLASSES FOR DESIGN TOKENS */
+.rebel-reset {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.rebel-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.rebel-focus-visible:focus-visible {
+  outline: 2px solid var(--rebel-focus);
+  outline-offset: 2px;
+  border-radius: var(--rebel-radius-sm);
+}
+
+.rebel-touch-target {
+  min-height: var(--rebel-touch-target);
+  min-width: var(--rebel-touch-target);
+}
+
+/* Component-specific utility classes */
+.rebel-surface {
+  background-color: var(--rebel-surface);
+  color: var(--rebel-text);
+}
+
+.rebel-surface-alt {
+  background-color: var(--rebel-surface-alt);
+  color: var(--rebel-text);
+}
+
+.rebel-text-primary {
+  color: var(--rebel-text);
+}
+
+.rebel-text-secondary {
+  color: var(--rebel-text-secondary);
+}
+
+.rebel-border-default {
+  border: 1px solid var(--rebel-border);
+}
+
+.rebel-shadow-default {
+  box-shadow: var(--rebel-shadow-md);
+}
+
+.rebel-radius-default {
+  border-radius: var(--rebel-radius-md);
+}
