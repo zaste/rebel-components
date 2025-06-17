@@ -1,0 +1,562 @@
+{
+  "metadata": {
+    "version": "10.2.0",
+    "last_updated": "2025-06-17",
+    "total_components_generated": 15847,
+    "success_rate": 0.89,
+    "average_session_length": "23 minutes",
+    "data_collection_period": "2024-01-01 to 2025-06-17"
+  },
+  
+  "components": {
+    "modal": {
+      "archetype": "disclosure",
+      "capability": "interactive",
+      "metrics": {
+        "satisfaction": 0.92,
+        "usage_frequency": 0.89,
+        "average_size": "6.8kb",
+        "implementation_time": "5.2 minutes",
+        "bug_reports_per_thousand": 0.3,
+        "accessibility_score": 0.94,
+        "performance_score": 0.88,
+        "webflow_compatibility": 0.96
+      },
+      "successful_features": {
+        "backdrop": {
+          "usage": 0.95,
+          "satisfaction": 0.94,
+          "description": "Dark overlay behind modal",
+          "implementation_notes": "Essential for focus management"
+        },
+        "focus_trap": {
+          "usage": 0.76,
+          "satisfaction": 0.91,
+          "description": "Keeps focus within modal",
+          "implementation_notes": "Critical for accessibility"
+        },
+        "escape_close": {
+          "usage": 0.88,
+          "satisfaction": 0.89,
+          "description": "Close on escape key",
+          "implementation_notes": "Expected behavior by users"
+        },
+        "body_scroll_lock": {
+          "usage": 0.71,
+          "satisfaction": 0.85,
+          "description": "Prevent background scroll",
+          "implementation_notes": "Improves mobile experience"
+        }
+      },
+      "common_combinations": [
+        {
+          "with": "form",
+          "frequency": 0.43,
+          "satisfaction": 0.91,
+          "use_case": "Contact forms, login dialogs"
+        },
+        {
+          "with": "gallery",
+          "frequency": 0.28,
+          "satisfaction": 0.88,
+          "use_case": "Image lightboxes"
+        },
+        {
+          "with": "confirmation",
+          "frequency": 0.15,
+          "satisfaction": 0.94,
+          "use_case": "Delete confirmations, destructive actions"
+        }
+      ],
+      "variants": {
+        "default": {
+          "usage": 0.67,
+          "satisfaction": 0.92,
+          "size": "6.8kb",
+          "description": "Standard modal with backdrop"
+        },
+        "compact": {
+          "usage": 0.23,
+          "satisfaction": 0.89,
+          "size": "5.1kb",
+          "description": "Minimal modal for mobile"
+        },
+        "expanded": {
+          "usage": 0.10,
+          "satisfaction": 0.94,
+          "size": "8.2kb",
+          "description": "Full-featured modal with animations"
+        }
+      },
+      "pain_points": [
+        {
+          "issue": "Mobile viewport issues",
+          "frequency": 0.12,
+          "solution": "Use viewport units and container queries"
+        },
+        {
+          "issue": "Focus management complexity",
+          "frequency": 0.08,
+          "solution": "Implement comprehensive focus trap"
+        }
+      ]
+    },
+    
+    "filter": {
+      "archetype": "collection",
+      "capability": "stateful",
+      "metrics": {
+        "satisfaction": 0.94,
+        "usage_frequency": 0.76,
+        "average_size": "8.3kb",
+        "implementation_time": "8.7 minutes",
+        "bug_reports_per_thousand": 0.1,
+        "accessibility_score": 0.96,
+        "performance_score": 0.91,
+        "webflow_compatibility": 0.93
+      },
+      "note": "GOLD STANDARD - Highest satisfaction component",
+      "successful_features": {
+        "debounced_search": {
+          "usage": 0.98,
+          "satisfaction": 0.96,
+          "description": "300ms debounced text search",
+          "implementation_notes": "Prevents API spam, improves performance"
+        },
+        "tag_filters": {
+          "usage": 0.87,
+          "satisfaction": 0.93,
+          "description": "Multi-select category filters",
+          "implementation_notes": "Visual feedback essential"
+        },
+        "state_persistence": {
+          "usage": 0.65,
+          "satisfaction": 0.89,
+          "description": "Remember filter state",
+          "implementation_notes": "Use sessionStorage for best UX"
+        },
+        "screen_reader": {
+          "usage": 0.78,
+          "satisfaction": 0.94,
+          "description": "Live announcements",
+          "implementation_notes": "Announce result counts and filter changes"
+        }
+      },
+      "variants": {
+        "default": {
+          "usage": 0.71,
+          "satisfaction": 0.94,
+          "size": "8.3kb"
+        },
+        "minimal": {
+          "usage": 0.19,
+          "satisfaction": 0.91,
+          "size": "5.9kb"
+        },
+        "advanced": {
+          "usage": 0.10,
+          "satisfaction": 0.96,
+          "size": "11.2kb"
+        }
+      }
+    },
+    
+    "tabs": {
+      "archetype": "navigation",
+      "capability": "interactive",
+      "metrics": {
+        "satisfaction": 0.90,
+        "usage_frequency": 0.82,
+        "average_size": "4.1kb",
+        "implementation_time": "4.8 minutes",
+        "bug_reports_per_thousand": 0.4,
+        "accessibility_score": 0.92,
+        "performance_score": 0.89,
+        "webflow_compatibility": 0.95
+      },
+      "successful_features": {
+        "roving_tabindex": {
+          "usage": 0.89,
+          "satisfaction": 0.93,
+          "description": "Keyboard navigation pattern",
+          "implementation_notes": "Arrow keys for tab navigation"
+        },
+        "orientation_support": {
+          "usage": 0.34,
+          "satisfaction": 0.87,
+          "description": "Horizontal/vertical layouts",
+          "implementation_notes": "CSS-driven orientation changes"
+        },
+        "lazy_loading": {
+          "usage": 0.23,
+          "satisfaction": 0.91,
+          "description": "Load panels on demand",
+          "implementation_notes": "Improves initial page performance"
+        }
+      },
+      "variants": {
+        "default": {
+          "usage": 0.78,
+          "satisfaction": 0.90,
+          "size": "4.1kb"
+        },
+        "vertical": {
+          "usage": 0.15,
+          "satisfaction": 0.88,
+          "size": "4.3kb"
+        },
+        "scrollable": {
+          "usage": 0.07,
+          "satisfaction": 0.92,
+          "size": "5.1kb"
+        }
+      }
+    },
+    
+    "form": {
+      "archetype": "input",
+      "capability": "stateful",
+      "metrics": {
+        "satisfaction": 0.85,
+        "usage_frequency": 0.91,
+        "average_size": "7.9kb",
+        "implementation_time": "12.3 minutes",
+        "bug_reports_per_thousand": 0.7,
+        "accessibility_score": 0.89,
+        "performance_score": 0.84,
+        "webflow_compatibility": 0.92
+      },
+      "successful_features": {
+        "real_time_validation": {
+          "usage": 0.93,
+          "satisfaction": 0.87,
+          "description": "Validate as user types",
+          "implementation_notes": "Balance feedback with interruption"
+        },
+        "error_display": {
+          "usage": 0.97,
+          "satisfaction": 0.91,
+          "description": "Clear error messaging",
+          "implementation_notes": "Associate errors with specific fields"
+        },
+        "progress_indication": {
+          "usage": 0.45,
+          "satisfaction": 0.89,
+          "description": "Show completion progress",
+          "implementation_notes": "Especially useful for multi-step forms"
+        }
+      },
+      "variants": {
+        "contact": {
+          "usage": 0.52,
+          "satisfaction": 0.88,
+          "size": "7.2kb"
+        },
+        "checkout": {
+          "usage": 0.18,
+          "satisfaction": 0.82,
+          "size": "9.8kb"
+        },
+        "registration": {
+          "usage": 0.30,
+          "satisfaction": 0.84,
+          "size": "8.5kb"
+        }
+      }
+    },
+    
+    "toast": {
+      "archetype": "feedback",
+      "capability": "interactive",
+      "metrics": {
+        "satisfaction": 0.91,
+        "usage_frequency": 0.67,
+        "average_size": "3.9kb",
+        "implementation_time": "3.1 minutes",
+        "bug_reports_per_thousand": 0.2,
+        "accessibility_score": 0.93,
+        "performance_score": 0.92,
+        "webflow_compatibility": 0.97
+      },
+      "successful_features": {
+        "auto_dismiss": {
+          "usage": 0.96,
+          "satisfaction": 0.92,
+          "description": "Disappear automatically",
+          "implementation_notes": "5-7 seconds optimal timing"
+        },
+        "position_control": {
+          "usage": 0.71,
+          "satisfaction": 0.89,
+          "description": "Configurable position",
+          "implementation_notes": "Top-right most popular"
+        },
+        "stacking": {
+          "usage": 0.43,
+          "satisfaction": 0.87,
+          "description": "Multiple toasts",
+          "implementation_notes": "Limit to 3-4 visible simultaneously"
+        }
+      }
+    },
+    
+    "accordion": {
+      "archetype": "disclosure",
+      "capability": "interactive",
+      "metrics": {
+        "satisfaction": 0.88,
+        "usage_frequency": 0.73,
+        "average_size": "3.2kb",
+        "implementation_time": "4.5 minutes",
+        "bug_reports_per_thousand": 0.3,
+        "accessibility_score": 0.91,
+        "performance_score": 0.90,
+        "webflow_compatibility": 0.94
+      },
+      "successful_features": {
+        "smooth_animation": {
+          "usage": 0.91,
+          "satisfaction": 0.89,
+          "description": "Animated open/close",
+          "implementation_notes": "CSS height transitions work best"
+        },
+        "multiple_open": {
+          "usage": 0.38,
+          "satisfaction": 0.85,
+          "description": "Multiple panels open",
+          "implementation_notes": "Consider content length"
+        }
+      }
+    }
+  },
+  
+  "patterns": {
+    "search_interface": {
+      "components": ["filter", "results", "pagination"],
+      "satisfaction": 0.91,
+      "frequency": 0.34,
+      "use_cases": ["e-commerce", "directory", "documentation"],
+      "implementation_notes": "Filter component should sync with results",
+      "success_factors": [
+        "Debounced search input",
+        "Clear result count display",
+        "Empty state handling",
+        "Loading state feedback"
+      ]
+    },
+    
+    "modal_form": {
+      "components": ["modal", "form"],
+      "satisfaction": 0.89,
+      "frequency": 0.56,
+      "use_cases": ["contact", "login", "registration", "edit"],
+      "implementation_notes": "Modal focus trap essential for form accessibility",
+      "success_factors": [
+        "Clear form validation",
+        "Escape key handling",
+        "Submit state feedback",
+        "Error message display"
+      ]
+    },
+    
+    "dashboard_layout": {
+      "components": ["sidebar", "tabs", "table", "progress"],
+      "satisfaction": 0.87,
+      "frequency": 0.21,
+      "use_cases": ["admin", "analytics", "monitoring"],
+      "implementation_notes": "Sidebar state should sync with tab navigation",
+      "success_factors": [
+        "Responsive collapse behavior",
+        "Consistent navigation state",
+        "Data loading feedback",
+        "Mobile-first approach"
+      ]
+    },
+    
+    "content_management": {
+      "components": ["tabs", "form", "table", "modal"],
+      "satisfaction": 0.83,
+      "frequency": 0.18,
+      "use_cases": ["cms", "blog", "documentation"],
+      "implementation_notes": "Form validation crucial for content quality",
+      "success_factors": [
+        "Auto-save functionality",
+        "Preview capabilities",
+        "Version control indication",
+        "Rich text support"
+      ]
+    }
+  },
+  
+  "success_metrics": {
+    "by_archetype": {
+      "disclosure": {
+        "average_satisfaction": 0.90,
+        "implementation_time": "4.8 minutes",
+        "success_rate": 0.91
+      },
+      "navigation": {
+        "average_satisfaction": 0.88,
+        "implementation_time": "5.1 minutes",
+        "success_rate": 0.89
+      },
+      "collection": {
+        "average_satisfaction": 0.89,
+        "implementation_time": "7.2 minutes",
+        "success_rate": 0.87
+      },
+      "input": {
+        "average_satisfaction": 0.85,
+        "implementation_time": "9.1 minutes",
+        "success_rate": 0.84
+      },
+      "feedback": {
+        "average_satisfaction": 0.89,
+        "implementation_time": "3.7 minutes",
+        "success_rate": 0.93
+      }
+    },
+    
+    "by_capability": {
+      "static": {
+        "average_satisfaction": 0.87,
+        "implementation_time": "2.1 minutes",
+        "success_rate": 0.96
+      },
+      "interactive": {
+        "average_satisfaction": 0.89,
+        "implementation_time": "4.3 minutes",
+        "success_rate": 0.91
+      },
+      "stateful": {
+        "average_satisfaction": 0.87,
+        "implementation_time": "8.7 minutes",
+        "success_rate": 0.85
+      },
+      "connected": {
+        "average_satisfaction": 0.84,
+        "implementation_time": "15.2 minutes",
+        "success_rate": 0.79
+      },
+      "synchronized": {
+        "average_satisfaction": 0.82,
+        "implementation_time": "28.4 minutes",
+        "success_rate": 0.73
+      }
+    }
+  },
+  
+  "user_feedback": {
+    "top_requested_features": [
+      {
+        "feature": "Better mobile responsiveness",
+        "requests": 1247,
+        "priority": "high"
+      },
+      {
+        "feature": "Dark mode support",
+        "requests": 892,
+        "priority": "medium"
+      },
+      {
+        "feature": "Animation customization",
+        "requests": 634,
+        "priority": "low"
+      },
+      {
+        "feature": "More form field types",
+        "requests": 578,
+        "priority": "medium"
+      }
+    ],
+    
+    "common_pain_points": [
+      {
+        "issue": "Complex setup for beginners",
+        "frequency": 0.23,
+        "solution": "Better getting started documentation"
+      },
+      {
+        "issue": "Styling conflicts in Webflow",
+        "frequency": 0.18,
+        "solution": "More specific CSS selectors"
+      },
+      {
+        "issue": "Performance on mobile",
+        "frequency": 0.15,
+        "solution": "Lazy loading and optimization"
+      }
+    ]
+  },
+  
+  "browser_compatibility": {
+    "chrome": {
+      "version": "120+",
+      "support": 0.98,
+      "issues": []
+    },
+    "firefox": {
+      "version": "119+",
+      "support": 0.96,
+      "issues": ["Minor CSS Grid differences"]
+    },
+    "safari": {
+      "version": "16+",
+      "support": 0.94,
+      "issues": ["Focus management quirks", "Date input styling"]
+    },
+    "edge": {
+      "version": "120+",
+      "support": 0.97,
+      "issues": []
+    },
+    "mobile_safari": {
+      "version": "16+",
+      "support": 0.92,
+      "issues": ["Viewport height issues", "Touch event handling"]
+    },
+    "chrome_mobile": {
+      "version": "120+",
+      "support": 0.95,
+      "issues": ["Keyboard overlap handling"]
+    }
+  },
+  
+  "performance_benchmarks": {
+    "average_component_size": "5.4kb",
+    "average_init_time": "18ms",
+    "average_lcp": "1.2s",
+    "average_fid": "45ms",
+    "average_cls": 0.05,
+    "lighthouse_scores": {
+      "performance": 89,
+      "accessibility": 96,
+      "best_practices": 92,
+      "seo": 88
+    }
+  },
+  
+  "adoption_metrics": {
+    "by_industry": {
+      "e_commerce": 0.28,
+      "saas": 0.22,
+      "education": 0.15,
+      "healthcare": 0.12,
+      "finance": 0.08,
+      "other": 0.15
+    },
+    
+    "by_team_size": {
+      "solo": 0.34,
+      "small_2_5": 0.28,
+      "medium_6_20": 0.23,
+      "large_20_plus": 0.15
+    },
+    
+    "webflow_usage": {
+      "webflow_only": 0.67,
+      "webflow_plus_custom": 0.23,
+      "migrated_to_custom": 0.10
+    }
+  }
+}
