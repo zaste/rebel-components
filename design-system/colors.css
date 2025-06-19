@@ -1,0 +1,746 @@
+/**
+ * 🎨 REBEL COMPONENTS - COLOR SYSTEM
+ * Complete color palette with utilities and semantic variants
+ * 
+ * @version 1.0.0
+ * @description Comprehensive color system with accessibility and theme support
+ * @compatibility Chrome 88+, Firefox 78+, Safari 14+
+ * @author Rebel Component Intelligence System
+ */
+
+/* ==========================================
+ * 🎨 COLOR SCALE REFERENCE
+ * Using HSL for better manipulation and consistency
+ * ========================================== */
+
+/*
+  PRIMARY BLUE SCALE (Hue: 210°)
+  --rebel-primary-50: hsl(210, 100%, 95%)   // #e3f2fd
+  --rebel-primary-100: hsl(210, 92%, 85%)   // #bbdefb
+  --rebel-primary-200: hsl(210, 87%, 78%)   // #90caf9
+  --rebel-primary-300: hsl(210, 82%, 69%)   // #64b5f6
+  --rebel-primary-400: hsl(210, 79%, 61%)   // #42a5f5
+  --rebel-primary-500: hsl(210, 83%, 53%)   // #2196f3
+  --rebel-primary-600: hsl(210, 79%, 46%)   // #1e88e5
+  --rebel-primary-700: hsl(210, 74%, 42%)   // #1976d2
+  --rebel-primary-800: hsl(210, 71%, 37%)   // #1565c0
+  --rebel-primary-900: hsl(210, 82%, 26%)   // #0d47a1
+*/
+
+/* ==========================================
+ * 🎨 TEXT COLOR UTILITIES
+ * ========================================== */
+
+/* Primary Text Colors */
+.rebel-text-primary { color: var(--rebel-text); }
+.rebel-text-secondary { color: var(--rebel-text-secondary); }
+.rebel-text-muted { color: var(--rebel-text-muted); }
+.rebel-text-light { color: var(--rebel-text-light); }
+.rebel-text-inverse { color: var(--rebel-text-inverse); }
+.rebel-text-disabled { color: var(--rebel-text-disabled); }
+.rebel-text-placeholder { color: var(--rebel-text-placeholder); }
+
+/* Brand Colors */
+.rebel-text-brand-primary { color: var(--rebel-primary); }
+.rebel-text-brand-secondary { color: var(--rebel-secondary); }
+
+/* Primary Scale Text Colors */
+.rebel-text-primary-50 { color: var(--rebel-primary-50); }
+.rebel-text-primary-100 { color: var(--rebel-primary-100); }
+.rebel-text-primary-200 { color: var(--rebel-primary-200); }
+.rebel-text-primary-300 { color: var(--rebel-primary-300); }
+.rebel-text-primary-400 { color: var(--rebel-primary-400); }
+.rebel-text-primary-500 { color: var(--rebel-primary-500); }
+.rebel-text-primary-600 { color: var(--rebel-primary-600); }
+.rebel-text-primary-700 { color: var(--rebel-primary-700); }
+.rebel-text-primary-800 { color: var(--rebel-primary-800); }
+.rebel-text-primary-900 { color: var(--rebel-primary-900); }
+
+/* Secondary Scale Text Colors */
+.rebel-text-secondary-50 { color: var(--rebel-secondary-50); }
+.rebel-text-secondary-100 { color: var(--rebel-secondary-100); }
+.rebel-text-secondary-200 { color: var(--rebel-secondary-200); }
+.rebel-text-secondary-300 { color: var(--rebel-secondary-300); }
+.rebel-text-secondary-400 { color: var(--rebel-secondary-400); }
+.rebel-text-secondary-500 { color: var(--rebel-secondary-500); }
+.rebel-text-secondary-600 { color: var(--rebel-secondary-600); }
+.rebel-text-secondary-700 { color: var(--rebel-secondary-700); }
+.rebel-text-secondary-800 { color: var(--rebel-secondary-800); }
+.rebel-text-secondary-900 { color: var(--rebel-secondary-900); }
+
+/* Semantic Text Colors */
+.rebel-text-success { color: var(--rebel-success); }
+.rebel-text-success-light { color: var(--rebel-success-light); }
+.rebel-text-success-dark { color: var(--rebel-success-dark); }
+
+.rebel-text-warning { color: var(--rebel-warning); }
+.rebel-text-warning-light { color: var(--rebel-warning-light); }
+.rebel-text-warning-dark { color: var(--rebel-warning-dark); }
+
+.rebel-text-error { color: var(--rebel-error); }
+.rebel-text-error-light { color: var(--rebel-error-light); }
+.rebel-text-error-dark { color: var(--rebel-error-dark); }
+
+.rebel-text-info { color: var(--rebel-info); }
+.rebel-text-info-light { color: var(--rebel-info-light); }
+.rebel-text-info-dark { color: var(--rebel-info-dark); }
+
+/* Interactive State Text Colors */
+.rebel-text-hover { color: var(--rebel-primary-hover); }
+.rebel-text-active { color: var(--rebel-primary-active); }
+.rebel-text-focus { color: var(--rebel-primary-focus); }
+
+/* ==========================================
+ * 🎨 BACKGROUND COLOR UTILITIES
+ * ========================================== */
+
+/* Surface Background Colors */
+.rebel-bg-surface { background-color: var(--rebel-surface); }
+.rebel-bg-surface-alt { background-color: var(--rebel-surface-alt); }
+.rebel-bg-surface-raised { background-color: var(--rebel-surface-raised); }
+.rebel-bg-surface-overlay { background-color: var(--rebel-surface-overlay); }
+.rebel-bg-surface-inverse { background-color: var(--rebel-surface-inverse); }
+.rebel-bg-surface-disabled { background-color: var(--rebel-surface-disabled); }
+
+/* Glass Background Effects */
+.rebel-bg-glass { 
+  background-color: var(--rebel-surface-glass);
+  backdrop-filter: var(--rebel-glass-backdrop);
+}
+.rebel-bg-glass-dark { 
+  background-color: var(--rebel-surface-glass-dark);
+  backdrop-filter: var(--rebel-glass-backdrop);
+}
+.rebel-bg-glass-strong { 
+  background-color: var(--rebel-surface-glass-strong);
+  backdrop-filter: var(--rebel-glass-backdrop);
+}
+
+/* Transparent Backgrounds */
+.rebel-bg-transparent { background-color: transparent; }
+.rebel-bg-backdrop { background-color: var(--rebel-surface-backdrop); }
+
+/* Brand Background Colors */
+.rebel-bg-primary { background-color: var(--rebel-primary); }
+.rebel-bg-primary-hover { background-color: var(--rebel-primary-hover); }
+.rebel-bg-primary-active { background-color: var(--rebel-primary-active); }
+.rebel-bg-secondary { background-color: var(--rebel-secondary); }
+
+/* Primary Scale Background Colors */
+.rebel-bg-primary-50 { background-color: var(--rebel-primary-50); }
+.rebel-bg-primary-100 { background-color: var(--rebel-primary-100); }
+.rebel-bg-primary-200 { background-color: var(--rebel-primary-200); }
+.rebel-bg-primary-300 { background-color: var(--rebel-primary-300); }
+.rebel-bg-primary-400 { background-color: var(--rebel-primary-400); }
+.rebel-bg-primary-500 { background-color: var(--rebel-primary-500); }
+.rebel-bg-primary-600 { background-color: var(--rebel-primary-600); }
+.rebel-bg-primary-700 { background-color: var(--rebel-primary-700); }
+.rebel-bg-primary-800 { background-color: var(--rebel-primary-800); }
+.rebel-bg-primary-900 { background-color: var(--rebel-primary-900); }
+
+/* Secondary Scale Background Colors */
+.rebel-bg-secondary-50 { background-color: var(--rebel-secondary-50); }
+.rebel-bg-secondary-100 { background-color: var(--rebel-secondary-100); }
+.rebel-bg-secondary-200 { background-color: var(--rebel-secondary-200); }
+.rebel-bg-secondary-300 { background-color: var(--rebel-secondary-300); }
+.rebel-bg-secondary-400 { background-color: var(--rebel-secondary-400); }
+.rebel-bg-secondary-500 { background-color: var(--rebel-secondary-500); }
+.rebel-bg-secondary-600 { background-color: var(--rebel-secondary-600); }
+.rebel-bg-secondary-700 { background-color: var(--rebel-secondary-700); }
+.rebel-bg-secondary-800 { background-color: var(--rebel-secondary-800); }
+.rebel-bg-secondary-900 { background-color: var(--rebel-secondary-900); }
+
+/* Semantic Background Colors */
+.rebel-bg-success { background-color: var(--rebel-success); }
+.rebel-bg-success-light { background-color: var(--rebel-success-light); }
+.rebel-bg-success-bg { background-color: var(--rebel-success-bg); }
+
+.rebel-bg-warning { background-color: var(--rebel-warning); }
+.rebel-bg-warning-light { background-color: var(--rebel-warning-light); }
+.rebel-bg-warning-bg { background-color: var(--rebel-warning-bg); }
+
+.rebel-bg-error { background-color: var(--rebel-error); }
+.rebel-bg-error-light { background-color: var(--rebel-error-light); }
+.rebel-bg-error-bg { background-color: var(--rebel-error-bg); }
+
+.rebel-bg-info { background-color: var(--rebel-info); }
+.rebel-bg-info-light { background-color: var(--rebel-info-light); }
+.rebel-bg-info-bg { background-color: var(--rebel-info-bg); }
+
+/* Interactive State Backgrounds */
+.rebel-bg-hover { background-color: var(--rebel-hover); }
+.rebel-bg-hover-light { background-color: var(--rebel-hover-light); }
+.rebel-bg-hover-strong { background-color: var(--rebel-hover-strong); }
+.rebel-bg-active { background-color: var(--rebel-active); }
+.rebel-bg-active-strong { background-color: var(--rebel-active-strong); }
+.rebel-bg-selection { background-color: var(--rebel-selection); }
+
+/* ==========================================
+ * 🎨 BORDER COLOR UTILITIES
+ * ========================================== */
+
+/* Base Border Colors */
+.rebel-border-default { border-color: var(--rebel-border); }
+.rebel-border-light { border-color: var(--rebel-border-light); }
+.rebel-border-dark { border-color: var(--rebel-border-dark); }
+.rebel-border-strong { border-color: var(--rebel-border-strong); }
+.rebel-border-inverse { border-color: var(--rebel-border-inverse); }
+
+/* Transparent Borders */
+.rebel-border-transparent { border-color: transparent; }
+
+/* Brand Border Colors */
+.rebel-border-primary { border-color: var(--rebel-primary); }
+.rebel-border-secondary { border-color: var(--rebel-secondary); }
+
+/* Primary Scale Border Colors */
+.rebel-border-primary-50 { border-color: var(--rebel-primary-50); }
+.rebel-border-primary-100 { border-color: var(--rebel-primary-100); }
+.rebel-border-primary-200 { border-color: var(--rebel-primary-200); }
+.rebel-border-primary-300 { border-color: var(--rebel-primary-300); }
+.rebel-border-primary-400 { border-color: var(--rebel-primary-400); }
+.rebel-border-primary-500 { border-color: var(--rebel-primary-500); }
+.rebel-border-primary-600 { border-color: var(--rebel-primary-600); }
+.rebel-border-primary-700 { border-color: var(--rebel-primary-700); }
+.rebel-border-primary-800 { border-color: var(--rebel-primary-800); }
+.rebel-border-primary-900 { border-color: var(--rebel-primary-900); }
+
+/* Semantic Border Colors */
+.rebel-border-success { border-color: var(--rebel-success); }
+.rebel-border-success-light { border-color: var(--rebel-success-light); }
+.rebel-border-success-border { border-color: var(--rebel-success-border); }
+
+.rebel-border-warning { border-color: var(--rebel-warning); }
+.rebel-border-warning-light { border-color: var(--rebel-warning-light); }
+.rebel-border-warning-border { border-color: var(--rebel-warning-border); }
+
+.rebel-border-error { border-color: var(--rebel-error); }
+.rebel-border-error-light { border-color: var(--rebel-error-light); }
+.rebel-border-error-border { border-color: var(--rebel-error-border); }
+
+.rebel-border-info { border-color: var(--rebel-info); }
+.rebel-border-info-light { border-color: var(--rebel-info-light); }
+.rebel-border-info-border { border-color: var(--rebel-info-border); }
+
+/* Interactive State Border Colors */
+.rebel-border-focus { border-color: var(--rebel-border-focus); }
+.rebel-border-hover { border-color: var(--rebel-primary-hover); }
+.rebel-border-active { border-color: var(--rebel-primary-active); }
+
+/* ==========================================
+ * 🎨 GRADIENT UTILITIES
+ * ========================================== */
+
+/* Primary Gradients */
+.rebel-gradient-primary {
+  background: linear-gradient(135deg, var(--rebel-primary-400), var(--rebel-primary-600));
+}
+
+.rebel-gradient-primary-to-secondary {
+  background: linear-gradient(135deg, var(--rebel-primary), var(--rebel-secondary-600));
+}
+
+.rebel-gradient-primary-vertical {
+  background: linear-gradient(to bottom, var(--rebel-primary-400), var(--rebel-primary-600));
+}
+
+.rebel-gradient-primary-radial {
+  background: radial-gradient(circle, var(--rebel-primary-400), var(--rebel-primary-700));
+}
+
+/* Semantic Gradients */
+.rebel-gradient-success {
+  background: linear-gradient(135deg, var(--rebel-success), var(--rebel-success-dark));
+}
+
+.rebel-gradient-warning {
+  background: linear-gradient(135deg, var(--rebel-warning), var(--rebel-warning-dark));
+}
+
+.rebel-gradient-error {
+  background: linear-gradient(135deg, var(--rebel-error), var(--rebel-error-dark));
+}
+
+.rebel-gradient-info {
+  background: linear-gradient(135deg, var(--rebel-info), var(--rebel-info-dark));
+}
+
+/* Surface Gradients */
+.rebel-gradient-surface {
+  background: linear-gradient(135deg, var(--rebel-surface), var(--rebel-surface-alt));
+}
+
+.rebel-gradient-glass {
+  background: linear-gradient(135deg, 
+    var(--rebel-surface-glass), 
+    var(--rebel-surface-glass-strong)
+  );
+}
+
+/* Overlay Gradients */
+.rebel-gradient-overlay-dark {
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    rgba(0, 0, 0, 0.1) 50%, 
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+.rebel-gradient-overlay-light {
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    rgba(255, 255, 255, 0.3) 100%
+  );
+}
+
+/* Accent Gradients */
+.rebel-gradient-rainbow {
+  background: linear-gradient(135deg, 
+    var(--rebel-primary), 
+    var(--rebel-success), 
+    var(--rebel-warning), 
+    var(--rebel-error)
+  );
+}
+
+.rebel-gradient-sunset {
+  background: linear-gradient(135deg, 
+    var(--rebel-warning), 
+    var(--rebel-error), 
+    var(--rebel-primary-800)
+  );
+}
+
+/* ==========================================
+ * 🎨 FILL AND STROKE UTILITIES
+ * For SVG elements
+ * ========================================== */
+
+/* Fill Colors */
+.rebel-fill-primary { fill: var(--rebel-primary); }
+.rebel-fill-secondary { fill: var(--rebel-secondary); }
+.rebel-fill-success { fill: var(--rebel-success); }
+.rebel-fill-warning { fill: var(--rebel-warning); }
+.rebel-fill-error { fill: var(--rebel-error); }
+.rebel-fill-info { fill: var(--rebel-info); }
+.rebel-fill-current { fill: currentColor; }
+.rebel-fill-none { fill: none; }
+
+/* Stroke Colors */
+.rebel-stroke-primary { stroke: var(--rebel-primary); }
+.rebel-stroke-secondary { stroke: var(--rebel-secondary); }
+.rebel-stroke-success { stroke: var(--rebel-success); }
+.rebel-stroke-warning { stroke: var(--rebel-warning); }
+.rebel-stroke-error { stroke: var(--rebel-error); }
+.rebel-stroke-info { stroke: var(--rebel-info); }
+.rebel-stroke-current { stroke: currentColor; }
+.rebel-stroke-none { stroke: none; }
+
+/* ==========================================
+ * 🎨 COLOR COMBINATIONS & PRESETS
+ * Semantic color combinations for components
+ * ========================================== */
+
+/* Button Color Presets */
+.rebel-btn-primary {
+  background-color: var(--rebel-primary);
+  color: var(--rebel-text-on-primary);
+  border-color: var(--rebel-primary);
+}
+
+.rebel-btn-primary:hover {
+  background-color: var(--rebel-primary-hover);
+  border-color: var(--rebel-primary-hover);
+}
+
+.rebel-btn-secondary {
+  background-color: var(--rebel-secondary);
+  color: var(--rebel-text-on-secondary);
+  border-color: var(--rebel-secondary);
+}
+
+.rebel-btn-outline-primary {
+  background-color: transparent;
+  color: var(--rebel-primary);
+  border-color: var(--rebel-primary);
+}
+
+.rebel-btn-outline-primary:hover {
+  background-color: var(--rebel-primary);
+  color: var(--rebel-text-on-primary);
+}
+
+/* Alert Color Presets */
+.rebel-alert-success {
+  background-color: var(--rebel-success-bg);
+  color: var(--rebel-success-dark);
+  border-color: var(--rebel-success-border);
+}
+
+.rebel-alert-warning {
+  background-color: var(--rebel-warning-bg);
+  color: var(--rebel-warning-dark);
+  border-color: var(--rebel-warning-border);
+}
+
+.rebel-alert-error {
+  background-color: var(--rebel-error-bg);
+  color: var(--rebel-error-dark);
+  border-color: var(--rebel-error-border);
+}
+
+.rebel-alert-info {
+  background-color: var(--rebel-info-bg);
+  color: var(--rebel-info-dark);
+  border-color: var(--rebel-info-border);
+}
+
+/* Badge Color Presets */
+.rebel-badge-primary {
+  background-color: var(--rebel-primary);
+  color: var(--rebel-text-on-primary);
+}
+
+.rebel-badge-secondary {
+  background-color: var(--rebel-secondary-200);
+  color: var(--rebel-secondary-800);
+}
+
+.rebel-badge-success {
+  background-color: var(--rebel-success);
+  color: var(--rebel-text-on-success);
+}
+
+.rebel-badge-warning {
+  background-color: var(--rebel-warning);
+  color: var(--rebel-text-on-warning);
+}
+
+.rebel-badge-error {
+  background-color: var(--rebel-error);
+  color: var(--rebel-text-on-error);
+}
+
+.rebel-badge-info {
+  background-color: var(--rebel-info);
+  color: var(--rebel-text-on-info);
+}
+
+/* Input Color Presets */
+.rebel-input-default {
+  background-color: var(--rebel-surface);
+  color: var(--rebel-text);
+  border-color: var(--rebel-border);
+}
+
+.rebel-input-default:focus {
+  border-color: var(--rebel-border-focus);
+  box-shadow: var(--rebel-shadow-focus);
+}
+
+.rebel-input-error {
+  border-color: var(--rebel-border-error);
+  box-shadow: var(--rebel-shadow-error);
+}
+
+.rebel-input-success {
+  border-color: var(--rebel-border-success);
+  box-shadow: var(--rebel-shadow-success);
+}
+
+/* ==========================================
+ * 🎨 OPACITY UTILITIES
+ * For creating subtle color variations
+ * ========================================== */
+
+.rebel-opacity-0 { opacity: 0; }
+.rebel-opacity-5 { opacity: 0.05; }
+.rebel-opacity-10 { opacity: 0.1; }
+.rebel-opacity-20 { opacity: 0.2; }
+.rebel-opacity-25 { opacity: 0.25; }
+.rebel-opacity-30 { opacity: 0.3; }
+.rebel-opacity-40 { opacity: 0.4; }
+.rebel-opacity-50 { opacity: 0.5; }
+.rebel-opacity-60 { opacity: 0.6; }
+.rebel-opacity-70 { opacity: 0.7; }
+.rebel-opacity-75 { opacity: 0.75; }
+.rebel-opacity-80 { opacity: 0.8; }
+.rebel-opacity-90 { opacity: 0.9; }
+.rebel-opacity-95 { opacity: 0.95; }
+.rebel-opacity-100 { opacity: 1; }
+
+/* ==========================================
+ * 🎨 COLOR MANIPULATION UTILITIES
+ * CSS filters for dynamic color effects
+ * ========================================== */
+
+/* Brightness Adjustments */
+.rebel-brighten-10 { filter: brightness(1.1); }
+.rebel-brighten-25 { filter: brightness(1.25); }
+.rebel-brighten-50 { filter: brightness(1.5); }
+
+.rebel-darken-10 { filter: brightness(0.9); }
+.rebel-darken-25 { filter: brightness(0.75); }
+.rebel-darken-50 { filter: brightness(0.5); }
+
+/* Saturation Adjustments */
+.rebel-saturate-0 { filter: saturate(0); }
+.rebel-saturate-50 { filter: saturate(0.5); }
+.rebel-saturate-150 { filter: saturate(1.5); }
+.rebel-saturate-200 { filter: saturate(2); }
+
+/* Contrast Adjustments */
+.rebel-contrast-50 { filter: contrast(0.5); }
+.rebel-contrast-75 { filter: contrast(0.75); }
+.rebel-contrast-125 { filter: contrast(1.25); }
+.rebel-contrast-150 { filter: contrast(1.5); }
+
+/* Hue Rotation */
+.rebel-hue-rotate-15 { filter: hue-rotate(15deg); }
+.rebel-hue-rotate-30 { filter: hue-rotate(30deg); }
+.rebel-hue-rotate-60 { filter: hue-rotate(60deg); }
+.rebel-hue-rotate-90 { filter: hue-rotate(90deg); }
+.rebel-hue-rotate-180 { filter: hue-rotate(180deg); }
+
+/* Invert */
+.rebel-invert { filter: invert(1); }
+.rebel-invert-0 { filter: invert(0); }
+
+/* Grayscale */
+.rebel-grayscale { filter: grayscale(1); }
+.rebel-grayscale-0 { filter: grayscale(0); }
+
+/* Sepia */
+.rebel-sepia { filter: sepia(1); }
+.rebel-sepia-0 { filter: sepia(0); }
+
+/* ==========================================
+ * 🎨 BLEND MODE UTILITIES
+ * For creative color mixing effects
+ * ========================================== */
+
+.rebel-mix-normal { mix-blend-mode: normal; }
+.rebel-mix-multiply { mix-blend-mode: multiply; }
+.rebel-mix-screen { mix-blend-mode: screen; }
+.rebel-mix-overlay { mix-blend-mode: overlay; }
+.rebel-mix-darken { mix-blend-mode: darken; }
+.rebel-mix-lighten { mix-blend-mode: lighten; }
+.rebel-mix-color-dodge { mix-blend-mode: color-dodge; }
+.rebel-mix-color-burn { mix-blend-mode: color-burn; }
+.rebel-mix-hard-light { mix-blend-mode: hard-light; }
+.rebel-mix-soft-light { mix-blend-mode: soft-light; }
+.rebel-mix-difference { mix-blend-mode: difference; }
+.rebel-mix-exclusion { mix-blend-mode: exclusion; }
+
+/* ==========================================
+ * 🎨 THEME VARIANTS
+ * Color adjustments for different themes
+ * ========================================== */
+
+/* Dark Theme Color Overrides */
+@media (prefers-color-scheme: dark) {
+  .rebel-theme-dark,
+  [data-theme="dark"] {
+    /* Override light theme colors for dark mode */
+    color-scheme: dark;
+  }
+  
+  .rebel-theme-dark .rebel-text-primary,
+  [data-theme="dark"] .rebel-text-primary {
+    color: var(--rebel-text-inverse);
+  }
+  
+  .rebel-theme-dark .rebel-bg-surface,
+  [data-theme="dark"] .rebel-bg-surface {
+    background-color: var(--rebel-surface-inverse);
+  }
+}
+
+/* High Contrast Theme */
+@media (prefers-contrast: high) {
+  .rebel-high-contrast {
+    /* Ensure maximum contrast for accessibility */
+    --rebel-text: #000000;
+    --rebel-surface: #ffffff;
+    --rebel-border: #000000;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .rebel-high-contrast {
+      --rebel-text: #ffffff;
+      --rebel-surface: #000000;
+      --rebel-border: #ffffff;
+    }
+  }
+}
+
+/* Forced Colors Mode (Windows High Contrast) */
+@media (forced-colors: active) {
+  .rebel-forced-colors {
+    /* Use system colors in forced colors mode */
+    --rebel-text: CanvasText;
+    --rebel-surface: Canvas;
+    --rebel-border: CanvasText;
+    --rebel-primary: Highlight;
+    --rebel-primary-hover: Highlight;
+  }
+}
+
+/* ==========================================
+ * 🎨 COLOR ACCESSIBILITY UTILITIES
+ * ========================================== */
+
+/* Screen Reader Only Colors (for semantic meaning) */
+.rebel-sr-only-color {
+  color: transparent;
+}
+
+/* Focus-visible color enhancements */
+.rebel-focus-enhanced *:focus-visible {
+  outline: 3px solid var(--rebel-focus);
+  outline-offset: 2px;
+}
+
+/* Ensure adequate contrast ratios */
+.rebel-contrast-aa {
+  /* Classes that guarantee WCAG AA compliance */
+  color: var(--rebel-text);
+  background-color: var(--rebel-surface);
+}
+
+.rebel-contrast-aaa {
+  /* Classes that guarantee WCAG AAA compliance */
+  color: var(--rebel-text);
+  background-color: var(--rebel-surface);
+  font-weight: var(--rebel-font-bold);
+}
+
+/* ==========================================
+ * 🎨 PRINT COLOR UTILITIES
+ * ========================================== */
+
+@media print {
+  /* Optimize colors for print */
+  .rebel-print-safe {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border-color: #000000 !important;
+  }
+  
+  .rebel-print-hide-bg {
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+  
+  .rebel-print-dark-text {
+    color: #000000 !important;
+  }
+}
+
+/* ==========================================
+ * 🎨 COLOR ANIMATION UTILITIES
+ * ========================================== */
+
+/* Smooth color transitions */
+.rebel-transition-colors {
+  transition: color var(--rebel-duration-fast) var(--rebel-easing),
+              background-color var(--rebel-duration-fast) var(--rebel-easing),
+              border-color var(--rebel-duration-fast) var(--rebel-easing);
+}
+
+.rebel-transition-colors-slow {
+  transition: color var(--rebel-duration-slow) var(--rebel-easing),
+              background-color var(--rebel-duration-slow) var(--rebel-easing),
+              border-color var(--rebel-duration-slow) var(--rebel-easing);
+}
+
+/* Reduce motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .rebel-transition-colors,
+  .rebel-transition-colors-slow {
+    transition: none;
+  }
+}
+
+/* ==========================================
+ * 🎨 COLOR DEBUGGING UTILITIES
+ * For development and design validation
+ * ========================================== */
+
+.rebel-debug-colors {
+  /* Add outline to see element boundaries */
+  outline: 1px solid rgba(255, 0, 0, 0.5);
+}
+
+.rebel-debug-contrast {
+  /* Test contrast ratios */
+  position: relative;
+}
+
+.rebel-debug-contrast::after {
+  content: 'Contrast: ' attr(data-contrast-ratio);
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 2px 4px;
+  font-size: 10px;
+  font-family: monospace;
+  pointer-events: none;
+}
+
+/* ==========================================
+ * 🎨 CUSTOM PROPERTIES HELPERS
+ * For component-specific color customization
+ * ========================================== */
+
+.rebel-color-inherit {
+  /* Inherit colors from parent scope */
+  --rebel-component-bg: inherit;
+  --rebel-component-text: inherit;
+  --rebel-component-border: inherit;
+}
+
+.rebel-color-brand {
+  /* Use brand colors */
+  --rebel-component-bg: var(--rebel-primary);
+  --rebel-component-text: var(--rebel-text-on-primary);
+  --rebel-component-border: var(--rebel-primary);
+}
+
+.rebel-color-neutral {
+  /* Use neutral colors */
+  --rebel-component-bg: var(--rebel-surface-alt);
+  --rebel-component-text: var(--rebel-text);
+  --rebel-component-border: var(--rebel-border);
+}
+
+.rebel-color-semantic-success {
+  /* Use success colors */
+  --rebel-component-bg: var(--rebel-success-bg);
+  --rebel-component-text: var(--rebel-success-dark);
+  --rebel-component-border: var(--rebel-success-border);
+}
+
+.rebel-color-semantic-warning {
+  /* Use warning colors */
+  --rebel-component-bg: var(--rebel-warning-bg);
+  --rebel-component-text: var(--rebel-warning-dark);
+  --rebel-component-border: var(--rebel-warning-border);
+}
+
+.rebel-color-semantic-error {
+  /* Use error colors */
+  --rebel-component-bg: var(--rebel-error-bg);
+  --rebel-component-text: var(--rebel-error-dark);
+  --rebel-component-border: var(--rebel-error-border);
+}
+
+.rebel-color-semantic-info {
+  /* Use info colors */
+  --rebel-component-bg: var(--rebel-info-bg);
+  --rebel-component-text: var(--rebel-info-dark);
+  --rebel-component-border: var(--rebel-info-border);
+}

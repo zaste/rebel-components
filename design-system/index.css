@@ -1,0 +1,1042 @@
+/**
+ * 🎨 REBEL DESIGN SYSTEM - COMPLETE IMPORT
+ * Single file import for the entire design system
+ * 
+ * @version 1.0.0
+ * @description Complete design system with tokens, utilities, and components
+ * @size ~16KB gzipped
+ * @compatibility Chrome 88+, Firefox 78+, Safari 14+
+ * @author Rebel Component Intelligence System
+ */
+
+/* ==========================================
+ * 🎯 DESIGN TOKENS - FOUNDATION
+ * Core design tokens and CSS custom properties
+ * ========================================== */
+@import url('./tokens.css');
+
+/* ==========================================
+ * 📝 TYPOGRAPHY SYSTEM
+ * Font families, sizes, weights, and text utilities
+ * ========================================== */
+@import url('./typography.css');
+
+/* ==========================================
+ * 📏 SPACING SYSTEM  
+ * Margin, padding, gap utilities with logical properties
+ * ========================================== */
+@import url('./spacing.css');
+
+/* ==========================================
+ * 🌈 COLOR SYSTEM
+ * Text, background, border colors and effects
+ * ========================================== */
+@import url('./colors.css');
+
+/* ==========================================
+ * 🎨 DESIGN SYSTEM BASE STYLES
+ * Essential base styles and resets
+ * ========================================== */
+
+/* Modern CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Root element optimization */
+html {
+  font-size: 16px; /* Base for rem calculations */
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Body defaults */
+body {
+  font-family: var(--rebel-font-family-sans);
+  font-size: var(--rebel-text-base);
+  font-weight: var(--rebel-font-normal);
+  line-height: var(--rebel-leading-normal);
+  color: var(--rebel-text);
+  background-color: var(--rebel-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improved defaults for common elements */
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Form elements inheritance */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+/* Button improvements */
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Link improvements */
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* List improvements */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Table improvements */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Form improvements */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+legend {
+  padding: 0;
+  display: table;
+  max-width: 100%;
+  white-space: normal;
+}
+
+/* ==========================================
+ * 🔧 UTILITY BASE CLASSES
+ * Essential utility classes for common patterns
+ * ========================================== */
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Skip links for accessibility */
+.rebel-skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--rebel-surface);
+  color: var(--rebel-text);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: var(--rebel-z-max);
+  transition: top var(--rebel-duration-fast) var(--rebel-easing);
+}
+
+.rebel-skip-link:focus {
+  top: 6px;
+}
+
+/* Container utilities */
+.rebel-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--rebel-spacing-4);
+  padding-right: var(--rebel-spacing-4);
+}
+
+.rebel-container-sm {
+  max-width: 800px;
+}
+
+.rebel-container-lg {
+  max-width: 1400px;
+}
+
+.rebel-container-xl {
+  max-width: 1600px;
+}
+
+.rebel-container-fluid {
+  max-width: none;
+}
+
+/* Layout utilities */
+.rebel-flex {
+  display: flex;
+}
+
+.rebel-inline-flex {
+  display: inline-flex;
+}
+
+.rebel-grid {
+  display: grid;
+}
+
+.rebel-inline-grid {
+  display: inline-grid;
+}
+
+.rebel-block {
+  display: block;
+}
+
+.rebel-inline-block {
+  display: inline-block;
+}
+
+.rebel-inline {
+  display: inline;
+}
+
+.rebel-hidden {
+  display: none;
+}
+
+/* Visibility utilities */
+.rebel-visible {
+  visibility: visible;
+}
+
+.rebel-invisible {
+  visibility: hidden;
+}
+
+/* Position utilities */
+.rebel-relative {
+  position: relative;
+}
+
+.rebel-absolute {
+  position: absolute;
+}
+
+.rebel-fixed {
+  position: fixed;
+}
+
+.rebel-sticky {
+  position: sticky;
+}
+
+.rebel-static {
+  position: static;
+}
+
+/* Overflow utilities */
+.rebel-overflow-auto {
+  overflow: auto;
+}
+
+.rebel-overflow-hidden {
+  overflow: hidden;
+}
+
+.rebel-overflow-visible {
+  overflow: visible;
+}
+
+.rebel-overflow-scroll {
+  overflow: scroll;
+}
+
+.rebel-overflow-x-auto {
+  overflow-x: auto;
+}
+
+.rebel-overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.rebel-overflow-y-auto {
+  overflow-y: auto;
+}
+
+.rebel-overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+/* Flexbox utilities */
+.rebel-flex-row {
+  flex-direction: row;
+}
+
+.rebel-flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.rebel-flex-col {
+  flex-direction: column;
+}
+
+.rebel-flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+.rebel-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.rebel-flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.rebel-flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.rebel-items-start {
+  align-items: flex-start;
+}
+
+.rebel-items-end {
+  align-items: flex-end;
+}
+
+.rebel-items-center {
+  align-items: center;
+}
+
+.rebel-items-baseline {
+  align-items: baseline;
+}
+
+.rebel-items-stretch {
+  align-items: stretch;
+}
+
+.rebel-justify-start {
+  justify-content: flex-start;
+}
+
+.rebel-justify-end {
+  justify-content: flex-end;
+}
+
+.rebel-justify-center {
+  justify-content: center;
+}
+
+.rebel-justify-between {
+  justify-content: space-between;
+}
+
+.rebel-justify-around {
+  justify-content: space-around;
+}
+
+.rebel-justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* Grid utilities */
+.rebel-grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.rebel-grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.rebel-grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.rebel-grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.rebel-grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.rebel-grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.rebel-grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.rebel-col-span-1 {
+  grid-column: span 1 / span 1;
+}
+
+.rebel-col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+.rebel-col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+.rebel-col-span-4 {
+  grid-column: span 4 / span 4;
+}
+
+.rebel-col-span-5 {
+  grid-column: span 5 / span 5;
+}
+
+.rebel-col-span-6 {
+  grid-column: span 6 / span 6;
+}
+
+.rebel-col-span-full {
+  grid-column: 1 / -1;
+}
+
+/* Width utilities */
+.rebel-w-auto {
+  width: auto;
+}
+
+.rebel-w-full {
+  width: 100%;
+}
+
+.rebel-w-screen {
+  width: 100vw;
+}
+
+.rebel-w-min {
+  width: min-content;
+}
+
+.rebel-w-max {
+  width: max-content;
+}
+
+.rebel-w-fit {
+  width: fit-content;
+}
+
+/* Height utilities */
+.rebel-h-auto {
+  height: auto;
+}
+
+.rebel-h-full {
+  height: 100%;
+}
+
+.rebel-h-screen {
+  height: 100vh;
+}
+
+.rebel-h-min {
+  height: min-content;
+}
+
+.rebel-h-max {
+  height: max-content;
+}
+
+.rebel-h-fit {
+  height: fit-content;
+}
+
+/* Border utilities */
+.rebel-border {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--rebel-border);
+}
+
+.rebel-border-0 {
+  border-width: 0;
+}
+
+.rebel-border-2 {
+  border-width: 2px;
+}
+
+.rebel-border-4 {
+  border-width: 4px;
+}
+
+.rebel-border-8 {
+  border-width: 8px;
+}
+
+.rebel-border-t {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: var(--rebel-border);
+}
+
+.rebel-border-r {
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: var(--rebel-border);
+}
+
+.rebel-border-b {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--rebel-border);
+}
+
+.rebel-border-l {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: var(--rebel-border);
+}
+
+/* Border radius utilities */
+.rebel-rounded-none {
+  border-radius: var(--rebel-radius-none);
+}
+
+.rebel-rounded-sm {
+  border-radius: var(--rebel-radius-sm);
+}
+
+.rebel-rounded {
+  border-radius: var(--rebel-radius-md);
+}
+
+.rebel-rounded-md {
+  border-radius: var(--rebel-radius-md);
+}
+
+.rebel-rounded-lg {
+  border-radius: var(--rebel-radius-lg);
+}
+
+.rebel-rounded-xl {
+  border-radius: var(--rebel-radius-xl);
+}
+
+.rebel-rounded-2xl {
+  border-radius: var(--rebel-radius-2xl);
+}
+
+.rebel-rounded-3xl {
+  border-radius: var(--rebel-radius-3xl);
+}
+
+.rebel-rounded-full {
+  border-radius: var(--rebel-radius-full);
+}
+
+/* Shadow utilities */
+.rebel-shadow-none {
+  box-shadow: none;
+}
+
+.rebel-shadow-xs {
+  box-shadow: var(--rebel-shadow-xs);
+}
+
+.rebel-shadow-sm {
+  box-shadow: var(--rebel-shadow-sm);
+}
+
+.rebel-shadow {
+  box-shadow: var(--rebel-shadow-md);
+}
+
+.rebel-shadow-md {
+  box-shadow: var(--rebel-shadow-md);
+}
+
+.rebel-shadow-lg {
+  box-shadow: var(--rebel-shadow-lg);
+}
+
+.rebel-shadow-xl {
+  box-shadow: var(--rebel-shadow-xl);
+}
+
+.rebel-shadow-2xl {
+  box-shadow: var(--rebel-shadow-2xl);
+}
+
+.rebel-shadow-inner {
+  box-shadow: var(--rebel-shadow-inner);
+}
+
+/* Cursor utilities */
+.rebel-cursor-auto {
+  cursor: auto;
+}
+
+.rebel-cursor-default {
+  cursor: default;
+}
+
+.rebel-cursor-pointer {
+  cursor: pointer;
+}
+
+.rebel-cursor-wait {
+  cursor: wait;
+}
+
+.rebel-cursor-text {
+  cursor: text;
+}
+
+.rebel-cursor-move {
+  cursor: move;
+}
+
+.rebel-cursor-help {
+  cursor: help;
+}
+
+.rebel-cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+/* User select utilities */
+.rebel-select-none {
+  user-select: none;
+}
+
+.rebel-select-text {
+  user-select: text;
+}
+
+.rebel-select-all {
+  user-select: all;
+}
+
+.rebel-select-auto {
+  user-select: auto;
+}
+
+/* Pointer events utilities */
+.rebel-pointer-events-none {
+  pointer-events: none;
+}
+
+.rebel-pointer-events-auto {
+  pointer-events: auto;
+}
+
+/* ==========================================
+ * 📱 RESPONSIVE UTILITIES
+ * Mobile-first responsive design patterns
+ * ========================================== */
+
+/* Show/hide utilities for different screen sizes */
+@media (max-width: 639px) {
+  .rebel-hidden-xs {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .rebel-hidden-sm {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .rebel-hidden-md {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rebel-hidden-lg {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .rebel-hidden-xl {
+    display: none;
+  }
+}
+
+/* Show only utilities */
+@media (max-width: 639px) {
+  .rebel-block-xs {
+    display: block;
+  }
+  .rebel-flex-xs {
+    display: flex;
+  }
+  .rebel-grid-xs {
+    display: grid;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .rebel-block-sm {
+    display: block;
+  }
+  .rebel-flex-sm {
+    display: flex;
+  }
+  .rebel-grid-sm {
+    display: grid;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .rebel-block-md {
+    display: block;
+  }
+  .rebel-flex-md {
+    display: flex;
+  }
+  .rebel-grid-md {
+    display: grid;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .rebel-block-lg {
+    display: block;
+  }
+  .rebel-flex-lg {
+    display: flex;
+  }
+  .rebel-grid-lg {
+    display: grid;
+  }
+}
+
+@media (min-width: 1280px) {
+  .rebel-block-xl {
+    display: block;
+  }
+  .rebel-flex-xl {
+    display: flex;
+  }
+  .rebel-grid-xl {
+    display: grid;
+  }
+}
+
+/* ==========================================
+ * 🔧 PRINT UTILITIES
+ * Optimizations for print media
+ * ========================================== */
+
+@media print {
+  .rebel-print-hidden {
+    display: none !important;
+  }
+  
+  .rebel-print-block {
+    display: block !important;
+  }
+  
+  .rebel-print-inline {
+    display: inline !important;
+  }
+  
+  .rebel-print-inline-block {
+    display: inline-block !important;
+  }
+  
+  /* Remove shadows and effects for print */
+  .rebel-print-no-shadow {
+    box-shadow: none !important;
+  }
+  
+  /* Ensure dark text on light background for print */
+  .rebel-print-text-black {
+    color: #000000 !important;
+  }
+  
+  .rebel-print-bg-white {
+    background-color: #ffffff !important;
+  }
+  
+  /* Page break utilities */
+  .rebel-print-break-before {
+    page-break-before: always;
+  }
+  
+  .rebel-print-break-after {
+    page-break-after: always;
+  }
+  
+  .rebel-print-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+}
+
+/* ==========================================
+ * ✨ MODERN CSS ENHANCEMENTS
+ * Progressive enhancement for modern browsers
+ * ========================================== */
+
+/* Container query utilities */
+@supports (container-type: inline-size) {
+  .rebel-container-query {
+    container-type: inline-size;
+  }
+  
+  .rebel-container-query-normal {
+    container: normal;
+  }
+  
+  .rebel-container-query-size {
+    container-type: size;
+  }
+}
+
+/* CSS Grid subgrid (when supported) */
+@supports (grid-template-rows: subgrid) {
+  .rebel-subgrid-rows {
+    grid-template-rows: subgrid;
+  }
+  
+  .rebel-subgrid-cols {
+    grid-template-columns: subgrid;
+  }
+}
+
+/* Backdrop filter effects */
+@supports (backdrop-filter: blur(1px)) {
+  .rebel-backdrop-blur {
+    backdrop-filter: var(--rebel-backdrop-blur-md);
+  }
+  
+  .rebel-backdrop-blur-sm {
+    backdrop-filter: var(--rebel-backdrop-blur-sm);
+  }
+  
+  .rebel-backdrop-blur-lg {
+    backdrop-filter: var(--rebel-backdrop-blur-lg);
+  }
+}
+
+/* CSS scroll snap */
+.rebel-scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+.rebel-snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+.rebel-snap-y {
+  scroll-snap-type: y mandatory;
+}
+
+.rebel-snap-start {
+  scroll-snap-align: start;
+}
+
+.rebel-snap-center {
+  scroll-snap-align: center;
+}
+
+.rebel-snap-end {
+  scroll-snap-align: end;
+}
+
+/* ==========================================
+ * 🎯 COMPONENT READY CLASSES
+ * Ready-to-use component patterns
+ * ========================================== */
+
+/* Card component */
+.rebel-card {
+  background: var(--rebel-surface);
+  border: 1px solid var(--rebel-border);
+  border-radius: var(--rebel-radius-lg);
+  box-shadow: var(--rebel-shadow-md);
+  padding: var(--rebel-spacing-6);
+  transition: all var(--rebel-duration-fast) var(--rebel-easing);
+}
+
+.rebel-card:hover {
+  box-shadow: var(--rebel-shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Button component */
+.rebel-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--rebel-spacing-2);
+  padding: var(--rebel-spacing-2) var(--rebel-spacing-4);
+  border: 1px solid transparent;
+  border-radius: var(--rebel-radius-md);
+  font-family: inherit;
+  font-size: var(--rebel-text-base);
+  font-weight: var(--rebel-font-medium);
+  line-height: var(--rebel-leading-tight);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--rebel-duration-fast) var(--rebel-easing);
+  min-height: var(--rebel-touch-target-recommended);
+  min-width: var(--rebel-touch-target-recommended);
+}
+
+.rebel-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.rebel-btn-primary {
+  background: var(--rebel-primary);
+  color: var(--rebel-text-on-primary);
+  border-color: var(--rebel-primary);
+}
+
+.rebel-btn-primary:hover:not(:disabled) {
+  background: var(--rebel-primary-hover);
+  border-color: var(--rebel-primary-hover);
+}
+
+.rebel-btn-secondary {
+  background: var(--rebel-surface);
+  color: var(--rebel-text);
+  border-color: var(--rebel-border);
+}
+
+.rebel-btn-secondary:hover:not(:disabled) {
+  background: var(--rebel-surface-alt);
+  border-color: var(--rebel-border-dark);
+}
+
+/* Form controls */
+.rebel-input {
+  display: block;
+  width: 100%;
+  padding: var(--rebel-spacing-2) var(--rebel-spacing-3);
+  font-family: inherit;
+  font-size: var(--rebel-text-base);
+  line-height: var(--rebel-leading-normal);
+  color: var(--rebel-text);
+  background: var(--rebel-surface);
+  border: 1px solid var(--rebel-border);
+  border-radius: var(--rebel-radius-md);
+  transition: all var(--rebel-duration-fast) var(--rebel-easing);
+  min-height: var(--rebel-touch-target-recommended);
+}
+
+.rebel-input:focus {
+  outline: none;
+  border-color: var(--rebel-border-focus);
+  box-shadow: var(--rebel-shadow-focus);
+}
+
+.rebel-input::placeholder {
+  color: var(--rebel-text-placeholder);
+}
+
+/* Alert component */
+.rebel-alert {
+  padding: var(--rebel-spacing-4);
+  border: 1px solid;
+  border-radius: var(--rebel-radius-md);
+  font-size: var(--rebel-text-base);
+  line-height: var(--rebel-leading-relaxed);
+}
+
+.rebel-alert-success {
+  background: var(--rebel-success-bg);
+  color: var(--rebel-success-dark);
+  border-color: var(--rebel-success-border);
+}
+
+.rebel-alert-warning {
+  background: var(--rebel-warning-bg);
+  color: var(--rebel-warning-dark);
+  border-color: var(--rebel-warning-border);
+}
+
+.rebel-alert-error {
+  background: var(--rebel-error-bg);
+  color: var(--rebel-error-dark);
+  border-color: var(--rebel-error-border);
+}
+
+.rebel-alert-info {
+  background: var(--rebel-info-bg);
+  color: var(--rebel-info-dark);
+  border-color: var(--rebel-info-border);
+}
+
+/* ==========================================
+ * 🎉 SYSTEM LOADED INDICATOR
+ * Indicates when the design system is ready
+ * ========================================== */
+
+:root {
+  --rebel-system-loaded: true;
+}
+
+/* Custom property to detect if system is loaded */
+.rebel-system-check::before {
+  content: var(--rebel-system-loaded, 'false');
+  display: none;
+}

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUN:REBEL Design Token System</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* 🎨 RUN:REBEL DESIGN TOKEN SYSTEM - Complete Foundation */
+        
+        :root {
+            /* 🎯 CORE BRAND COLORS */
+            --rr-black: #000;
+            --rr-white: #FFF;
+            --rr-red: #FF3131;
+            --rr-gray: #333;
+            --rr-gray-light: #6c757d;
+            --rr-gray-dark: #1a1a1a;
+            
+            /* 🎨 SEMANTIC COLOR SYSTEM */
+            --rr-primary: var(--rr-red);
+            --rr-primary-alpha-10: rgba(255, 49, 49, 0.1);
+            --rr-primary-alpha-20: rgba(255, 49, 49, 0.2);
+            --rr-primary-alpha-40: rgba(255, 49, 49, 0.4);
+            --rr-primary-alpha-60: rgba(255, 49, 49, 0.6);
+            --rr-primary-alpha-80: rgba(255, 49, 49, 0.8);
+            
+            --rr-surface-primary: var(--rr-black);
+            --rr-surface-secondary: var(--rr-gray-dark);
+            --rr-surface-elevated: var(--rr-gray);
+            --rr-surface-glass: rgba(0, 0, 0, 0.7);
+            --rr-surface-overlay: rgba(0, 0, 0, 0.8);
+            
+            --rr-text-primary: var(--rr-white);
+            --rr-text-secondary: var(--rr-primary);
+            --rr-text-muted: var(--rr-gray-light);
+            --rr-text-inverse: var(--rr-black);
+            
+            /* 🎭 GLASSMORPHISM SYSTEM */
+            --rr-glass-blur: blur(10px) saturate(120%);
+            --rr-glass-border: 1px solid rgba(255, 49, 49, 0.6);
+            --rr-glass-shadow-inset: inset 0 0 20px rgba(255, 49, 49, 0.1);
+            --rr-glass-shadow-outer: 0 0 40px rgba(0, 0, 0, 0.8);
+            
+            /* ⚡ GLOW EFFECTS */
+            --rr-glow-text: 0 0 10px rgba(255, 255, 255, 0.5);
+            --rr-glow-primary: 0 0 10px var(--rr-red);
+            --rr-glow-strong: 0 0 30px rgba(255, 49, 49, 0.5);
+            --rr-glow-border: 0 0 60px rgba(255, 49, 49, 0.3);
+            
+            /* 📐 SPACING SYSTEM (Base: 0.5rem) */
+            --rr-space-0: 0;
+            --rr-space-1: 0.3rem;    /* 4.8px */
+            --rr-space-2: 0.5rem;    /* 8px */
+            --rr-space-3: 1rem;      /* 16px */
+            --rr-space-4: 1.5rem;    /* 24px */
+            --rr-space-5: 2rem;      /* 32px */
+            --rr-space-6: 2.5rem;    /* 40px */
+            --rr-space-8: 4rem;      /* 64px */
+            
+            /* 📝 TYPOGRAPHY SYSTEM */
+            --rr-font-family: 'JetBrains Mono', monospace;
+            --rr-font-weight-normal: 400;
+            --rr-font-weight-bold: 700;
+            --rr-font-weight-black: 800;
+            
+            --rr-text-xs: 0.6rem;     /* 9.6px */
+            --rr-text-sm: 0.7rem;     /* 11.2px */
+            --rr-text-base: 0.9rem;   /* 14.4px */
+            --rr-text-lg: 1.2rem;     /* 19.2px */
+            --rr-text-xl: 1.5rem;     /* 24px */
+            --rr-text-2xl: 2rem;      /* 32px */
+            --rr-text-3xl: 3rem;      /* 48px */
+            
+            --rr-line-height-tight: 1;
+            --rr-line-height-normal: 1.2;
+            --rr-line-height-relaxed: 1.5;
+            
+            --rr-letter-spacing-tight: -0.02em;
+            --rr-letter-spacing-normal: 0;
+            --rr-letter-spacing-wide: 1px;
+            --rr-letter-spacing-wider: 2px;
+            
+            /* 🎬 ANIMATION SYSTEM */
+            --rr-duration-instant: 0ms;
+            --rr-duration-fast: 100ms;
+            --rr-duration-normal: 200ms;
+            --rr-duration-slow: 300ms;
+            --rr-duration-scan: 3s;
+            
+            --rr-easing-linear: linear;
+            --rr-easing-ease: ease;
+            --rr-easing-in: ease-in;
+            --rr-easing-out: ease-out;
+            --rr-easing-in-out: ease-in-out;
+            
+            /* 📏 BORDER SYSTEM */
+            --rr-border-width-thin: 1px;
+            --rr-border-width-normal: 2px;
+            --rr-border-width-thick: 3px;
+            
+            --rr-border-radius-none: 0;
+            --rr-border-radius-sm: 2px;
+            --rr-border-radius-md: 4px;
+            --rr-border-radius-lg: 8px;
+            
+            /* 📊 Z-INDEX SCALE */
+            --rr-z-base: 0;
+            --rr-z-dropdown: 100;
+            --rr-z-overlay: 400;
+            --rr-z-modal: 500;
+            --rr-z-toast: 600;
+            --rr-z-tooltip: 700;
+            --rr-z-max: 999;
+            
+            /* 🎯 COMPONENT-SPECIFIC TOKENS */
+            --rr-terminal-bg: var(--rr-surface-glass);
+            --rr-terminal-border: var(--rr-glass-border);
+            --rr-terminal-shadow: var(--rr-glass-shadow-inset), var(--rr-glass-shadow-outer);
+            
+            --rr-hud-text: var(--rr-primary);
+            --rr-hud-bg: rgba(0, 0, 0, 0.5);
+            --rr-hud-border: 1px solid rgba(255, 255, 255, 0.2);
+            
+            --rr-button-bg: rgba(0, 0, 0, 0.8);
+            --rr-button-bg-hover: rgba(255, 49, 49, 0.9);
+            --rr-button-text: var(--rr-white);
+            --rr-button-text-hover: var(--rr-black);
+            --rr-button-shadow: var(--rr-glow-primary);
+            
+            --rr-grid-color: rgba(255, 49, 49, 0.03);
+            --rr-grid-size: 40px;
+            
+            /* 📱 RESPONSIVE BREAKPOINTS */
+            --rr-breakpoint-sm: 640px;
+            --rr-breakpoint-md: 768px;
+            --rr-breakpoint-lg: 1024px;
+            --rr-breakpoint-xl: 1280px;
+        }
+        
+        /* 🌗 THEME VARIANTS */
+        
+        /* High Contrast Mode */
+        @media (prefers-contrast: high) {
+            :root {
+                --rr-glass-border: 2px solid var(--rr-red);
+                --rr-text-primary: var(--rr-white);
+                --rr-glow-text: none;
+            }
+        }
+        
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            :root {
+                --rr-duration-scan: 0.01ms;
+                --rr-duration-fast: 0.01ms;
+                --rr-duration-normal: 0.01ms;
+                --rr-duration-slow: 0.01ms;
+            }
+        }
+        
+        /* 🎨 UTILITY CLASSES FOR DESIGN TOKENS */
+        
+        /* Typography Utilities */
+        .rr-font-mono { font-family: var(--rr-font-family); }
+        .rr-font-normal { font-weight: var(--rr-font-weight-normal); }
+        .rr-font-bold { font-weight: var(--rr-font-weight-bold); }
+        .rr-font-black { font-weight: var(--rr-font-weight-black); }
+        
+        .rr-text-xs { font-size: var(--rr-text-xs); }
+        .rr-text-sm { font-size: var(--rr-text-sm); }
+        .rr-text-base { font-size: var(--rr-text-base); }
+        .rr-text-lg { font-size: var(--rr-text-lg); }
+        .rr-text-xl { font-size: var(--rr-text-xl); }
+        .rr-text-2xl { font-size: var(--rr-text-2xl); }
+        .rr-text-3xl { font-size: var(--rr-text-3xl); }
+        
+        .rr-tracking-tight { letter-spacing: var(--rr-letter-spacing-tight); }
+        .rr-tracking-normal { letter-spacing: var(--rr-letter-spacing-normal); }
+        .rr-tracking-wide { letter-spacing: var(--rr-letter-spacing-wide); }
+        .rr-tracking-wider { letter-spacing: var(--rr-letter-spacing-wider); }
+        
+        .rr-leading-tight { line-height: var(--rr-line-height-tight); }
+        .rr-leading-normal { line-height: var(--rr-line-height-normal); }
+        .rr-leading-relaxed { line-height: var(--rr-line-height-relaxed); }
+        
+        /* Color Utilities */
+        .rr-text-primary { color: var(--rr-text-primary); }
+        .rr-text-secondary { color: var(--rr-text-secondary); }
+        .rr-text-muted { color: var(--rr-text-muted); }
+        
+        .rr-bg-primary { background-color: var(--rr-surface-primary); }
+        .rr-bg-secondary { background-color: var(--rr-surface-secondary); }
+        .rr-bg-glass { background: var(--rr-surface-glass); }
+        
+        /* Effect Utilities */
+        .rr-glow-text { text-shadow: var(--rr-glow-text); }
+        .rr-glow-primary { box-shadow: var(--rr-glow-primary); }
+        .rr-glow-strong { box-shadow: var(--rr-glow-strong); }
+        
+        .rr-glass {
+            background: var(--rr-surface-glass);
+            backdrop-filter: var(--rr-glass-blur);
+            border: var(--rr-glass-border);
+            box-shadow: var(--rr-terminal-shadow);
+        }
+        
+        /* Spacing Utilities */
+        .rr-p-0 { padding: var(--rr-space-0); }
+        .rr-p-1 { padding: var(--rr-space-1); }
+        .rr-p-2 { padding: var(--rr-space-2); }
+        .rr-p-3 { padding: var(--rr-space-3); }
+        .rr-p-4 { padding: var(--rr-space-4); }
+        .rr-p-5 { padding: var(--rr-space-5); }
+        
+        .rr-m-0 { margin: var(--rr-space-0); }
+        .rr-m-1 { margin: var(--rr-space-1); }
+        .rr-m-2 { margin: var(--rr-space-2); }
+        .rr-m-3 { margin: var(--rr-space-3); }
+        .rr-m-4 { margin: var(--rr-space-4); }
+        .rr-m-5 { margin: var(--rr-space-5); }
+        
+        /* Animation Utilities */
+        .rr-transition-fast { transition: all var(--rr-duration-fast) var(--rr-easing-ease); }
+        .rr-transition-normal { transition: all var(--rr-duration-normal) var(--rr-easing-ease); }
+        .rr-transition-slow { transition: all var(--rr-duration-slow) var(--rr-easing-ease); }
+        
+        /* Grid Overlay Utility */
+        .rr-grid-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent var(--rr-grid-size), var(--rr-grid-color) var(--rr-grid-size), var(--rr-grid-color) calc(var(--rr-grid-size) + 1px)),
+                repeating-linear-gradient(90deg, transparent, transparent var(--rr-grid-size), var(--rr-grid-color) var(--rr-grid-size), var(--rr-grid-color) calc(var(--rr-grid-size) + 1px));
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        
+        /* Scanline Effect Utility */
+        .rr-scanline {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .rr-scanline::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(to bottom, transparent, var(--rr-primary-alpha-80), transparent);
+            animation: rr-scan var(--rr-duration-scan) var(--rr-easing-linear) infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes rr-scan {
+            to { top: 100%; }
+        }
+        
+        /* 📋 DEMO SHOWCASE */
+        
+        body {
+            margin: 0;
+            padding: var(--rr-space-4);
+            background: var(--rr-surface-primary);
+            font-family: var(--rr-font-family);
+            color: var(--rr-text-primary);
+            line-height: var(--rr-line-height-relaxed);
+        }
+        
+        .showcase {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            gap: var(--rr-space-4);
+        }
+        
+        .section {
+            background: var(--rr-surface-glass);
+            backdrop-filter: var(--rr-glass-blur);
+            border: var(--rr-glass-border);
+            box-shadow: var(--rr-terminal-shadow);
+            padding: var(--rr-space-4);
+            position: relative;
+        }
+        
+        .section::before {
+            content: attr(data-title);
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            padding: var(--rr-space-1) var(--rr-space-3);
+            background: var(--rr-primary-alpha-10);
+            color: var(--rr-primary);
+            font-size: var(--rr-text-sm);
+            font-weight: var(--rr-font-weight-bold);
+            letter-spacing: var(--rr-letter-spacing-wider);
+            border-bottom: 1px solid var(--rr-primary-alpha-40);
+            text-align: left;
+        }
+        
+        .section-content {
+            margin-top: var(--rr-space-5);
+        }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--rr-space-3);
+        }
+        
+        .color-card {
+            background: var(--rr-surface-secondary);
+            border: 1px solid var(--rr-primary-alpha-20);
+            padding: var(--rr-space-3);
+            text-align: center;
+        }
+        
+        .color-swatch {
+            width: 100%;
+            height: 60px;
+            margin-bottom: var(--rr-space-2);
+            border: 1px solid var(--rr-primary-alpha-40);
+        }
+        
+        .token-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: var(--rr-space-1);
+            font-size: var(--rr-text-sm);
+            font-family: var(--rr-font-family);
+        }
+        
+        .token-grid .token-name { color: var(--rr-primary); }
+        .token-grid .token-value { color: var(--rr-text-muted); }
+        .token-grid .token-result { color: var(--rr-text-primary); }
+        
+        .component-demo {
+            display: grid;
+            gap: var(--rr-space-3);
+        }
+        
+        .demo-terminal {
+            background: var(--rr-terminal-bg);
+            backdrop-filter: var(--rr-glass-blur);
+            border: var(--rr-terminal-border);
+            box-shadow: var(--rr-terminal-shadow);
+            padding: var(--rr-space-4);
+            position: relative;
+            text-align: center;
+        }
+        
+        .demo-terminal::before {
+            content: 'DEMO TERMINAL > SYSTEM READY';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            padding: var(--rr-space-1) var(--rr-space-3);
+            background: var(--rr-primary-alpha-10);
+            color: var(--rr-primary);
+            font-size: var(--rr-text-sm);
+            font-weight: var(--rr-font-weight-bold);
+            letter-spacing: var(--rr-letter-spacing-wider);
+            border-bottom: 1px solid var(--rr-primary-alpha-40);
+            text-align: left;
+        }
+        
+        .demo-text {
+            margin-top: var(--rr-space-5);
+            font-size: var(--rr-text-xl);
+            font-weight: var(--rr-font-weight-black);
+            text-transform: uppercase;
+            letter-spacing: var(--rr-letter-spacing-tight);
+            color: var(--rr-text-primary);
+            text-shadow: var(--rr-glow-text);
+        }
+        
+        .demo-button {
+            margin-top: var(--rr-space-4);
+            padding: var(--rr-space-2) var(--rr-space-4);
+            background: var(--rr-button-bg);
+            backdrop-filter: var(--rr-glass-blur);
+            border: 1px solid var(--rr-primary);
+            color: var(--rr-button-text);
+            font-family: var(--rr-font-family);
+            font-weight: var(--rr-font-weight-bold);
+            font-size: var(--rr-text-base);
+            text-transform: uppercase;
+            letter-spacing: var(--rr-letter-spacing-wide);
+            cursor: pointer;
+            transition: all var(--rr-duration-normal) var(--rr-easing-ease);
+            box-shadow: var(--rr-glow-primary);
+        }
+        
+        .demo-button::before {
+            content: '> ';
+            color: var(--rr-primary);
+            margin-right: var(--rr-space-2);
+        }
+        
+        .demo-button:hover {
+            background: var(--rr-button-bg-hover);
+            color: var(--rr-button-text-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--rr-glow-strong);
+        }
+        
+        .demo-button:hover::before {
+            color: var(--rr-button-text-hover);
+        }
+        
+        .typography-demo {
+            display: grid;
+            gap: var(--rr-space-3);
+        }
+        
+        .type-sample {
+            padding: var(--rr-space-2);
+            border-left: 2px solid var(--rr-primary-alpha-60);
+            background: var(--rr-surface-secondary);
+        }
+        
+        .utilities-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--rr-space-3);
+        }
+        
+        .utility-card {
+            background: var(--rr-surface-secondary);
+            border: 1px solid var(--rr-primary-alpha-20);
+            padding: var(--rr-space-3);
+            transition: var(--rr-transition-normal);
+        }
+        
+        .utility-card:hover {
+            border-color: var(--rr-primary-alpha-60);
+            box-shadow: var(--rr-glow-primary);
+        }
+        
+        @media (max-width: 768px) {
+            .showcase {
+                padding: var(--rr-space-2);
+                gap: var(--rr-space-3);
+            }
+            
+            .token-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .utilities-demo {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="showcase">
+        <!-- Header -->
+        <div class="section" data-title="RUN:REBEL DESIGN TOKEN SYSTEM">
+            <div class="rr-grid-overlay"></div>
+            <div class="section-content">
+                <h1 class="rr-text-3xl rr-font-black rr-tracking-tight rr-glow-text rr-text-primary">
+                    TACTICAL INTERFACE DESIGN SYSTEM
+                </h1>
+                <p class="rr-text-base rr-text-muted rr-m-3">
+                    Complete design token system extracted from RUN:REBEL tactical interface components.
+                    Optimized for cyberpunk/HUD aesthetics with glassmorphism and glow effects.
+                </p>
+            </div>
+        </div>
+
+        <!-- Color System -->
+        <div class="section rr-scanline" data-title="COLOR SYSTEM">
+            <div class="section-content">
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: var(--rr-black);"></div>
+                        <div class="rr-text-sm rr-font-bold">Primary Black</div>
+                        <div class="rr-text-xs rr-text-muted">--rr-black: #000</div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: var(--rr-red);"></div>
+                        <div class="rr-text-sm rr-font-bold">Tactical Red</div>
+                        <div class="rr-text-xs rr-text-muted">--rr-red: #FF3131</div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: var(--rr-white);"></div>
+                        <div class="rr-text-sm rr-font-bold">Terminal White</div>
+                        <div class="rr-text-xs rr-text-muted">--rr-white: #FFF</div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: var(--rr-gray);"></div>
+                        <div class="rr-text-sm rr-font-bold">Interface Gray</div>
+                        <div class="rr-text-xs rr-text-muted">--rr-gray: #333</div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: var(--rr-surface-glass);"></div>
+                        <div class="rr-text-sm rr-font-bold">Glass Surface</div>
+                        <div class="rr-text-xs rr-text-muted">rgba(0,0,0,0.7)</div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: var(--rr-primary-alpha-40);"></div>
+                        <div class="rr-text-sm rr-font-bold">Red Alpha 40%</div>
+                        <div class="rr-text-xs rr-text-muted">rgba(255,49,49,0.4)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typography System -->
+        <div class="section" data-title="TYPOGRAPHY SYSTEM">
+            <div class="section-content">
+                <div class="typography-demo">
+                    <div class="type-sample">
+                        <div class="rr-text-3xl rr-font-black rr-tracking-tight">PROTOCOL INITIALIZED</div>
+                        <div class="rr-text-xs rr-text-muted">3xl • 800 weight • tight tracking</div>
+                    </div>
+                    <div class="type-sample">
+                        <div class="rr-text-xl rr-font-bold rr-tracking-normal">TACTICAL INTERFACE READY</div>
+                        <div class="rr-text-xs rr-text-muted">xl • 700 weight • normal tracking</div>
+                    </div>
+                    <div class="type-sample">
+                        <div class="rr-text-base rr-font-normal rr-tracking-wide">System status: Operational</div>
+                        <div class="rr-text-xs rr-text-muted">base • 400 weight • wide tracking</div>
+                    </div>
+                    <div class="type-sample">
+                        <div class="rr-text-sm rr-font-bold rr-tracking-wider rr-text-secondary">LAT: 42.8584° N | LON: 2.6456° W</div>
+                        <div class="rr-text-xs rr-text-muted">sm • 700 weight • wider tracking • tactical red</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Component Demo -->
+        <div class="section" data-title="COMPONENT DEMONSTRATION">
+            <div class="section-content">
+                <div class="component-demo">
+                    <div class="demo-terminal rr-scanline">
+                        <div class="rr-grid-overlay"></div>
+                        <div class="demo-text">
+                            NO PERMISSION REQUIRED.
+                        </div>
+                        <button class="demo-button">
+                            EXECUTE PROTOCOL
+                        </button>
+                        <div style="position: absolute; bottom: var(--rr-space-2); left: var(--rr-space-2);">
+                            <div class="rr-text-xs rr-text-muted">LAT: 42.8584° N | LON: 2.6456° W</div>
+                        </div>
+                        <div style="position: absolute; bottom: var(--rr-space-2); right: var(--rr-space-2);">
+                            <div class="rr-text-xs rr-text-secondary">● LIVE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Design Tokens Reference -->
+        <div class="section" data-title="DESIGN TOKENS REFERENCE">
+            <div class="section-content">
+                <div class="token-grid">
+                    <div class="rr-font-bold rr-text-secondary">Token</div>
+                    <div class="rr-font-bold rr-text-secondary">Value</div>
+                    <div class="rr-font-bold rr-text-secondary">Usage</div>
+                    
+                    <div class="token-name">--rr-space-3</div>
+                    <div class="token-value">1rem (16px)</div>
+                    <div class="token-result">Standard spacing</div>
+                    
+                    <div class="token-name">--rr-text-xl</div>
+                    <div class="token-value">1.5rem (24px)</div>
+                    <div class="token-result">Large headings</div>
+                    
+                    <div class="token-name">--rr-glass-blur</div>
+                    <div class="token-value">blur(10px) saturate(120%)</div>
+                    <div class="token-result">Glassmorphism effect</div>
+                    
+                    <div class="token-name">--rr-glow-primary</div>
+                    <div class="token-value">0 0 10px var(--rr-red)</div>
+                    <div class="token-result">Primary glow effect</div>
+                    
+                    <div class="token-name">--rr-duration-scan</div>
+                    <div class="token-value">3s</div>
+                    <div class="token-result">Scanline animation</div>
+                    
+                    <div class="token-name">--rr-primary-alpha-60</div>
+                    <div class="token-value">rgba(255,49,49,0.6)</div>
+                    <div class="token-result">Semi-transparent red</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Utility Classes -->
+        <div class="section" data-title="UTILITY CLASSES">
+            <div class="section-content">
+                <div class="utilities-demo">
+                    <div class="utility-card">
+                        <div class="rr-text-sm rr-font-bold rr-text-secondary rr-m-2">Typography</div>
+                        <div class="rr-text-xs rr-text-muted">
+                            .rr-text-xl, .rr-font-bold, .rr-tracking-wide, .rr-glow-text
+                        </div>
+                    </div>
+                    <div class="utility-card">
+                        <div class="rr-text-sm rr-font-bold rr-text-secondary rr-m-2">Effects</div>
+                        <div class="rr-text-xs rr-text-muted">
+                            .rr-glass, .rr-glow-primary, .rr-scanline, .rr-grid-overlay
+                        </div>
+                    </div>
+                    <div class="utility-card">
+                        <div class="rr-text-sm rr-font-bold rr-text-secondary rr-m-2">Spacing</div>
+                        <div class="rr-text-xs rr-text-muted">
+                            .rr-p-{0-5}, .rr-m-{0-5}, .rr-space-{0-8}
+                        </div>
+                    </div>
+                    <div class="utility-card">
+                        <div class="rr-text-sm rr-font-bold rr-text-secondary rr-m-2">Colors</div>
+                        <div class="rr-text-xs rr-text-muted">
+                            .rr-text-primary, .rr-bg-glass, .rr-text-secondary
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Implementation Guide -->
+        <div class="section" data-title="IMPLEMENTATION GUIDE">
+            <div class="section-content">
+                <div class="rr-text-base rr-text-primary rr-m-3">
+                    <strong class="rr-text-secondary">Quick Start:</strong>
+                </div>
+                <div class="rr-text-sm rr-text-muted rr-leading-relaxed">
+                    1. Import the CSS custom properties into your project<br>
+                    2. Use utility classes for rapid prototyping<br>
+                    3. Reference design tokens in your custom CSS<br>
+                    4. Apply glassmorphism with <code class="rr-text-secondary">.rr-glass</code><br>
+                    5. Add tactical effects with <code class="rr-text-secondary">.rr-scanline</code> and <code class="rr-text-secondary">.rr-grid-overlay</code>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
